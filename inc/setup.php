@@ -1,0 +1,123 @@
+<?php
+/**
+ * Theme setup: supports, menus, content width, textdomain.
+ *
+ * @package Alo_Blog
+ * @since 1.0.0
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ */
+function aloblog_setup() {
+	load_theme_textdomain( 'alo-blog', get_template_directory() . '/languages' );
+
+	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'title-tag' );
+	add_theme_support( 'post-thumbnails' );
+	add_theme_support(
+		'html5',
+		array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+			'style',
+			'script',
+		)
+	);
+	add_theme_support(
+		'custom-logo',
+		array(
+			'height'      => 64,
+			'width'       => 200,
+			'flex-height' => true,
+			'flex-width'  => true,
+		)
+	);
+	add_theme_support( 'customize-selective-refresh-widgets' );
+	add_theme_support( 'responsive-embeds' );
+	add_theme_support( 'align-wide' );
+	add_theme_support( 'wp-block-styles' );
+
+	add_editor_style( 'assets/css/editor-style.css' );
+
+	register_nav_menus(
+		array(
+			'primary' => esc_html__( 'Primary Menu', 'alo-blog' ),
+			'footer'  => esc_html__( 'Footer Menu', 'alo-blog' ),
+		)
+	);
+}
+add_action( 'after_setup_theme', 'aloblog_setup' );
+
+/**
+ * Registers footer widget areas (max 3, per scope lock).
+ */
+function aloblog_widgets_init() {
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar', 'alo-blog' ),
+			'id'            => 'sidebar-1',
+			'description'   => esc_html__( 'Appears on posts and pages with sidebar layout.', 'alo-blog' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	for ( $i = 1; $i <= 3; $i++ ) {
+		register_sidebar(
+			array(
+				/* translators: %d: footer widget area number. */
+				'name'          => sprintf( esc_html__( 'Footer %d', 'alo-blog' ), $i ),
+				'id'            => 'footer-' . $i,
+				'description'   => esc_html__( 'Appears in the footer.', 'alo-blog' ),
+				'before_widget' => '<section id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h2 class="widget-title">',
+				'after_title'   => '</h2>',
+			)
+		);
+	}
+}
+add_action( 'widgets_init', 'aloblog_widgets_init' );
+
+/**
+ * Registers the theme pattern category.
+ */
+function aloblog_pattern_categories() {
+	register_block_pattern_category(
+		'alo-blog-intro',
+		array( 'label' => esc_html__( 'Alo Blog', 'alo-blog' ) )
+	);
+}
+add_action( 'init', 'aloblog_pattern_categories' );
+
+/**
+ * Registers an Accent block style for quotes.
+ */
+function aloblog_register_block_styles() {
+	register_block_style(
+		'core/quote',
+		array(
+			'name'         => 'accent',
+			'label'        => __( 'Accent', 'alo-blog' ),
+			'inline_style' => '.wp-block-quote.is-style-accent{border-left-color:var(--alo-blog-primary);background:#eef2ff;padding:16px 20px;border-radius:0 8px 8px 0;}',
+		)
+	);
+}
+add_action( 'init', 'aloblog_register_block_styles' );
+
+/**
+ * Sets the content width in pixels, based on the design system (content 720px).
+ */
+function aloblog_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'aloblog_content_width', 720 );
+}
+add_action( 'after_setup_theme', 'aloblog_content_width', 0 );

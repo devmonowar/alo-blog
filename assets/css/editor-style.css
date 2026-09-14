@@ -1,0 +1,13 @@
+/**
+ * Alo Blog editor styles - match front-end reading experience.
+ *
+ * @package Alo_Blog
+ * @since 1.0.0
+ */
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Bengali", sans-serif;
+	font-size: 17px;
+	line-height: 1.7;
+	color: #1a1a1a;
+}

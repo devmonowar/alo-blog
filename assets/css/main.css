@@ -241,17 +241,23 @@ a:focus-visible {
 	color: var(--alo-blog-footer-text);
 	margin-top: 40px;
 	padding: 32px 0;
+	border-top: 3px solid var(--alo-blog-primary);
 }
 
 .alo-blog-footer a {
 	color: var(--alo-blog-footer-text);
 }
 
+.alo-blog-footer a:hover,
+.alo-blog-footer a:focus-visible {
+	color: #fff;
+}
+
 .alo-blog-footer-widgets {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 20px;
-	margin-bottom: 20px;
+	gap: 20px 32px;
+	margin-bottom: 8px;
 }
 
 @media (max-width: 768px) {
@@ -338,11 +344,34 @@ a:focus-visible {
 	margin-bottom: 20px;
 }
 
+@media (min-width: 901px) {
+	.alo-blog-sidebar {
+		position: sticky;
+		top: 24px;
+	}
+
+	body.admin-bar .alo-blog-sidebar {
+		top: 56px;
+	}
+}
+
 .widget-title {
+	position: relative;
 	margin: 0 0 12px;
 	padding-bottom: 8px;
 	border-bottom: 1px solid var(--alo-blog-border);
 	font-size: 18px;
+}
+
+.widget-title::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -1px;
+	width: 48px;
+	height: 3px;
+	border-radius: 2px;
+	background: var(--alo-blog-primary);
 }
 
 @media (max-width: 900px) {
@@ -736,6 +765,35 @@ a.page-numbers:hover,
 	border-bottom: 0;
 }
 
+/* Reading progress bar (single posts) */
+.alo-blog-progress {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	height: 4px;
+	pointer-events: none;
+}
+
+.alo-blog-progress-bar {
+	display: block;
+	height: 100%;
+	width: 0;
+	background: var(--alo-blog-primary);
+	border-radius: 0 2px 2px 0;
+}
+
+body.admin-bar .alo-blog-progress {
+	top: 32px;
+}
+
+@media (max-width: 782px) {
+	body.admin-bar .alo-blog-progress {
+		top: 46px;
+	}
+}
+
 /* Search form input */
 .alo-blog-search-form input[type="search"] {
 	flex: 1;
@@ -790,7 +848,7 @@ a.page-numbers:hover,
 	gap: 16px;
 	flex-wrap: wrap;
 	list-style: none;
-	margin: 0 0 16px;
+	margin: 0;
 	padding: 0;
 }
 
@@ -800,4 +858,26 @@ a.page-numbers:hover,
 
 #footer-menu a:hover {
 	text-decoration: underline;
+}
+
+.alo-blog-footer-bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 12px 24px;
+	flex-wrap: wrap;
+	margin-top: 24px;
+	padding-top: 20px;
+	border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.alo-blog-footer-bottom #footer-menu {
+	margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+	.alo-blog-footer-bottom {
+		flex-direction: column;
+		align-items: flex-start;
+	}
 }

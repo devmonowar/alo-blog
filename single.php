@@ -12,6 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header();
 ?>
+<div class="alo-blog-progress" aria-hidden="true"><span class="alo-blog-progress-bar"></span></div>
 <div class="alo-blog-layout">
 	<div class="alo-blog-content">
 		<?php

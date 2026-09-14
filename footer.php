@@ -25,33 +25,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 			<?php
 		}
-		if ( has_nav_menu( 'footer' ) ) {
-			wp_nav_menu(
-				array(
-					'theme_location' => 'footer',
-					'menu_id'        => 'footer-menu',
-					'container'      => false,
-					'depth'          => 1,
-					'fallback_cb'    => false,
-				)
-			);
-		}
 		?>
-		<p class="alo-blog-copyright">
+		<div class="alo-blog-footer-bottom">
 			<?php
-			$aloblog_credit = get_theme_mod( 'aloblog_footer_credit', '' );
-			if ( $aloblog_credit ) {
-				echo esc_html( $aloblog_credit );
-			} else {
-				printf(
-					/* translators: 1: current year, 2: site name. */
-					esc_html__( '© %1$s %2$s. All rights reserved.', 'alo-blog' ),
-					esc_html( date_i18n( 'Y' ) ),
-					esc_html( get_bloginfo( 'name' ) )
+			if ( has_nav_menu( 'footer' ) ) {
+				wp_nav_menu(
+					array(
+						'theme_location' => 'footer',
+						'menu_id'        => 'footer-menu',
+						'container'      => false,
+						'depth'          => 1,
+						'fallback_cb'    => false,
+					)
 				);
 			}
 			?>
-		</p>
+			<p class="alo-blog-copyright">
+				<?php
+				$aloblog_credit = get_theme_mod( 'aloblog_footer_credit', '' );
+				if ( $aloblog_credit ) {
+					echo esc_html( $aloblog_credit );
+				} else {
+					printf(
+						/* translators: 1: current year, 2: site name. */
+						esc_html__( '© %1$s %2$s. All rights reserved.', 'alo-blog' ),
+						esc_html( date_i18n( 'Y' ) ),
+						esc_html( get_bloginfo( 'name' ) )
+					);
+				}
+				?>
+			</p>
+		</div>
 	</div>
 </footer>
 <?php wp_footer(); ?>

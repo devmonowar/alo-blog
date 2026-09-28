@@ -49,6 +49,19 @@ a:focus-visible {
 	outline-offset: 2px;
 }
 
+/* Long titles and words must wrap, never cause horizontal overflow. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.alo-blog-site-title,
+.widget-title {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
 .alo-blog-container {
 	max-width: var(--alo-blog-container-width);
 	margin: 0 auto;
@@ -160,9 +173,42 @@ a:focus-visible {
 	color: #fff;
 	border: 0;
 	border-radius: 6px;
-	padding: 10px 16px;
-	font-size: 16px;
+	padding: 12px;
+	line-height: 1;
 	cursor: pointer;
+}
+
+.alo-blog-menu-icon {
+	display: inline-flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.alo-blog-menu-icon > span {
+	display: block;
+	width: 22px;
+	height: 2px;
+	border-radius: 2px;
+	background: #fff;
+	transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.alo-blog-nav.toggled .alo-blog-menu-icon > span:first-child {
+	transform: translateY(7px) rotate(45deg);
+}
+
+.alo-blog-nav.toggled .alo-blog-menu-icon > span:nth-child(2) {
+	opacity: 0;
+}
+
+.alo-blog-nav.toggled .alo-blog-menu-icon > span:last-child {
+	transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.alo-blog-menu-icon > span {
+		transition: none;
+	}
 }
 
 .alo-blog-nav ul {
@@ -195,9 +241,99 @@ a:focus-visible {
 	box-shadow: inset 0 -2px 0 var(--alo-blog-primary);
 }
 
+/* Sub-menus: dropdown panel on desktop, indented stack on mobile. */
+.alo-blog-nav li {
+	position: relative;
+}
+
+.alo-blog-nav ul ul {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 200;
+	min-width: 220px;
+	flex-direction: column;
+	gap: 0;
+	background: var(--alo-blog-bg);
+	border: 1px solid var(--alo-blog-border);
+	border-radius: 8px;
+	box-shadow: 0 12px 24px rgba(17, 24, 39, 0.12);
+	padding: 8px;
+}
+
+.alo-blog-nav ul ul a {
+	display: block;
+	padding: 10px 12px;
+	font-weight: 400;
+}
+
+.alo-blog-nav ul ul ul {
+	top: 0;
+	left: 100%;
+}
+
+.alo-blog-nav li:hover > ul,
+.alo-blog-nav li.open > ul,
+.alo-blog-nav li > a:focus ~ ul {
+	display: flex;
+}
+
+.alo-blog-nav ul ul li {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.alo-blog-nav ul ul li > a {
+	flex: 1 1 auto;
+	line-height: 1.5;
+}
+
+.alo-blog-submenu-toggle {
+	background: transparent;
+	border: 0;
+	border-radius: 4px;
+	padding: 4px 6px;
+	margin-left: 2px;
+	font-size: 12px;
+	line-height: 1;
+	color: inherit;
+	opacity: 0.75;
+	cursor: pointer;
+}
+
+.alo-blog-submenu-toggle:hover,
+.alo-blog-submenu-toggle:focus-visible {
+	opacity: 1;
+	color: var(--alo-blog-primary);
+}
+
+.alo-blog-submenu-toggle > span[aria-hidden="true"] {
+	display: inline-block;
+	transition: transform 0.2s ease;
+}
+
+.alo-blog-nav li.open > .alo-blog-submenu-toggle {
+	color: var(--alo-blog-primary);
+	opacity: 1;
+}
+
+.alo-blog-nav li.open > .alo-blog-submenu-toggle > span[aria-hidden="true"] {
+	transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.alo-blog-submenu-toggle > span[aria-hidden="true"] {
+		transition: none;
+	}
+}
+
 @media (max-width: 768px) {
 	.alo-blog-menu-toggle {
-		display: block;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.alo-blog-nav ul {
@@ -232,6 +368,44 @@ a:focus-visible {
 
 	.alo-blog-nav.toggled ul li:first-child a {
 		border-top: 0;
+	}
+
+	.alo-blog-nav.toggled ul li {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	.alo-blog-nav.toggled ul li a {
+		flex: 1 1 auto;
+	}
+
+	.alo-blog-nav.toggled .alo-blog-submenu-toggle {
+		flex: 0 0 auto;
+		margin: 8px 0 8px 8px;
+		padding: 12px;
+		font-size: 14px;
+	}
+
+	.alo-blog-nav.toggled ul ul {
+		position: static;
+		display: none;
+		flex: 1 1 100%;
+		min-width: 0;
+		border: 0;
+		border-left: 2px solid var(--alo-blog-primary);
+		border-radius: 0;
+		box-shadow: none;
+		padding: 0 0 0 16px;
+		margin: 0;
+	}
+
+	.alo-blog-nav.toggled li.open > ul {
+		display: block;
+	}
+
+	.alo-blog-nav.toggled ul ul a {
+		border-top: 1px solid var(--alo-blog-border);
 	}
 }
 
@@ -290,7 +464,7 @@ a:focus-visible {
 .alo-blog-author-box {
 	display: flex;
 	gap: 16px;
-	align-items: flex-start;
+	align-items: center;
 	border: 1px solid var(--alo-blog-border);
 	border-radius: 8px;
 	padding: 20px;
@@ -440,6 +614,25 @@ img {
 	height: auto;
 }
 
+/* Classic oEmbeds: never overflow, video keeps 16:9. */
+.alo-blog-entry-content embed,
+.alo-blog-entry-content iframe,
+.alo-blog-entry-content object,
+.alo-blog-entry-content video,
+.alo-blog-entry-content audio {
+	max-width: 100%;
+}
+
+.alo-blog-entry-content iframe[src*="youtube.com"],
+.alo-blog-entry-content iframe[src*="youtu.be"],
+.alo-blog-entry-content iframe[src*="vimeo.com"],
+.alo-blog-entry-content iframe[src*="wordpress.tv"],
+.alo-blog-entry-content iframe[src*="dailymotion.com"] {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+}
+
 /* Buttons */
 .alo-blog-menu-toggle:hover,
 .alo-blog-search-form button:hover,
@@ -517,6 +710,13 @@ img {
 	overflow-wrap: break-word;
 }
 
+/* Contain floated (alignleft/alignright) content inside posts. */
+.alo-blog-entry-content::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
 .alo-blog-entry-content h2,
 .alo-blog-entry-content h3,
 .alo-blog-entry-content h4 {
@@ -575,12 +775,16 @@ img {
 	font-size: 15px;
 }
 
+/* Page links (wp_link_pages) always clear floated content. */
+.alo-blog-page-links {
+	clear: both;
+	margin: 0 0 16px;
+}
+
 .alo-blog-tags {
 	color: var(--alo-blog-muted);
 	font-size: 14px;
-}
-
-.alo-blog-tags a {
+}.alo-blog-tags a {
 	display: inline-block;
 	margin: 0 6px 6px 0;
 	padding: 3px 12px;
@@ -622,6 +826,28 @@ a.page-numbers:hover,
 	color: #fff;
 }
 
+/* Block Query pagination: same look as theme pagination. */
+.wp-block-query-pagination {
+	gap: 8px;
+	margin: 24px 0 0;
+}
+
+a.wp-block-query-pagination-next,
+a.wp-block-query-pagination-previous {
+	display: inline-block;
+	padding: 8px 14px;
+	border: 1px solid var(--alo-blog-border);
+	border-radius: 6px;
+	text-decoration: none;
+}
+
+a.wp-block-query-pagination-next:hover,
+a.wp-block-query-pagination-previous:hover {
+	background: var(--alo-blog-primary);
+	border-color: var(--alo-blog-primary);
+	color: #fff;
+}
+
 /* Post navigation */
 .post-navigation {
 	margin-top: 32px;
@@ -651,6 +877,12 @@ a.page-numbers:hover,
 
 .post-navigation .nav-title {
 	font-weight: 600;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+.post-navigation .nav-links > div {
+	min-width: 0;
 }
 
 @media (max-width: 600px) {
@@ -660,6 +892,18 @@ a.page-numbers:hover,
 
 	.post-navigation .nav-next {
 		text-align: left;
+	}
+
+	.alo-blog-branding {
+		flex: 1 1 auto;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 2px;
+		min-width: 0;
+	}
+
+	.alo-blog-site-title {
+		font-size: 22px;
 	}
 }
 
@@ -696,6 +940,49 @@ a.page-numbers:hover,
 
 .comment-content p {
 	margin: 0 0 12px;
+}
+
+.comment-content {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+.comment-content pre {
+	overflow: auto;
+	max-width: 100%;
+	padding: 12px;
+	border: 1px solid var(--alo-blog-border);
+	border-radius: 8px;
+}
+
+.comment-content table {
+	width: 100%;
+	margin: 0 0 12px;
+	border-collapse: collapse;
+}
+
+.comment-content th,
+.comment-content td {
+	padding: 8px 12px;
+	border: 1px solid var(--alo-blog-border);
+	text-align: left;
+}
+
+.comment-content th {
+	background: #f3f4f6;
+}
+
+.comment-content dt,
+.alo-blog-entry-content dt {
+	font-weight: 700;
+}
+
+@media (max-width: 600px) {
+	.alo-blog-entry-content table,
+	.comment-content table {
+		display: block;
+		overflow-x: auto;
+	}
 }
 
 .comment-reply-link {

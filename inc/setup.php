@@ -42,8 +42,8 @@ function aloblog_setup() {
 	);
 	add_theme_support( 'customize-selective-refresh-widgets' );
 	add_theme_support( 'responsive-embeds' );
-	add_theme_support( 'align-wide' );
 	add_theme_support( 'wp-block-styles' );
+	add_theme_support( 'editor-styles' );
 
 	add_editor_style( 'assets/css/editor-style.css' );
 
@@ -113,6 +113,34 @@ function aloblog_register_block_styles() {
 	);
 }
 add_action( 'init', 'aloblog_register_block_styles' );
+
+/**
+ * Appends an accessible submenu toggle button to parent menu items.
+ *
+ * Gives keyboard and screen-reader users an explicit control for
+ * sub-menus, exposing open/closed state via aria-expanded.
+ *
+ * @param string   $item_output The menu item's starting HTML output.
+ * @param WP_Post  $item        Menu item data object.
+ * @param int      $depth       Depth of menu item.
+ * @param stdClass $args        An object of wp_nav_menu() arguments.
+ * @return string Filtered menu item output.
+ */
+function aloblog_submenu_toggle( $item_output, $item, $depth, $args ) {
+	if ( empty( $args->theme_location ) || 'primary' !== $args->theme_location ) {
+		return $item_output;
+	}
+	if ( ! in_array( 'menu-item-has-children', $item->classes, true ) ) {
+		return $item_output;
+	}
+	$item_output .= sprintf(
+		'<button class="alo-blog-submenu-toggle" aria-expanded="false" aria-haspopup="true" data-expand="%1$s" data-collapse="%2$s"><span class="screen-reader-text">%1$s</span><span aria-hidden="true">&#x25BE;</span></button>',
+		esc_attr__( 'Expand submenu', 'alo-blog' ),
+		esc_attr__( 'Collapse submenu', 'alo-blog' )
+	);
+	return $item_output;
+}
+add_filter( 'walker_nav_menu_start_el', 'aloblog_submenu_toggle', 10, 4 );
 
 /**
  * Sets the content width in pixels, based on the design system (content 720px).

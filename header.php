@@ -41,23 +41,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 			}
 			?>
 		</div>
+		<?php if ( has_nav_menu( 'primary' ) ) { ?>
 		<nav id="site-navigation" class="alo-blog-nav" aria-label="<?php esc_attr_e( 'Primary Menu', 'alo-blog' ); ?>">
+				<button class="alo-blog-menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="<?php esc_attr_e( 'Menu', 'alo-blog' ); ?>"><span class="alo-blog-menu-icon" aria-hidden="true"><span></span><span></span><span></span></span></button>
 			<?php
-			if ( has_nav_menu( 'primary' ) ) {
-				?>
-				<button class="alo-blog-menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'alo-blog' ); ?></button>
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'primary',
-						'menu_id'        => 'primary-menu',
-						'container'      => false,
-						'fallback_cb'    => false,
-					)
-				);
-			}
+			wp_nav_menu(
+				array(
+					'theme_location' => 'primary',
+					'menu_id'        => 'primary-menu',
+					'container'      => false,
+					'fallback_cb'    => false,
+				)
+			);
 			?>
 		</nav>
+		<?php } ?>
 	</div>
 </header>
 <main id="main" class="alo-blog-container">

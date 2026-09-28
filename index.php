@@ -14,6 +14,7 @@ get_header();
 ?>
 <div class="alo-blog-layout">
 	<div class="alo-blog-content">
+		<h1 class="screen-reader-text"><?php esc_html_e( 'Latest Posts', 'alo-blog' ); ?></h1>
 		<?php
 		if ( have_posts() ) {
 			while ( have_posts() ) {

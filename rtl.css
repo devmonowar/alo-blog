@@ -1,0 +1,107 @@
+/**
+ * Alo Blog — RTL overrides.
+ *
+ * Mirrors every left/right-directional rule from main.css so the
+ * "RTL-friendly" claim in readme.txt holds true.
+ *
+ * WordPress loads this automatically for right-to-left languages.
+ *
+ * @package Alo_Blog
+ * @since 1.0.1
+ */
+
+.skip-link:focus {
+	left: auto;
+	right: 8px;
+}
+
+.alo-blog-nav ul ul {
+	left: auto;
+	right: 0;
+}
+
+.alo-blog-nav ul ul ul {
+	left: auto;
+	right: 100%;
+}
+
+.alo-blog-submenu-toggle {
+	margin-left: 0;
+	margin-right: 2px;
+}
+
+.alo-blog-nav.toggled ul ul {
+	padding: 0 16px 0 0;
+	border-left: 0;
+	border-right: 2px solid var(--alo-blog-primary);
+}
+
+.alo-blog-entry-content ul,
+.alo-blog-entry-content ol {
+	padding-left: 0;
+	padding-right: 24px;
+}
+
+.alo-blog-entry-content blockquote {
+	border-left: 0;
+	border-right: 4px solid var(--alo-blog-primary);
+	border-radius: 8px 0 0 8px;
+}
+
+.wp-block-quote.is-style-accent {
+	border-left-color: transparent;
+	border-right-color: var(--alo-blog-primary);
+	border-radius: 8px 0 0 8px;
+}
+
+.alo-blog-entry-content th,
+.alo-blog-entry-content td,
+.comment-content th,
+.comment-content td {
+	text-align: right;
+}
+
+.sticky {
+	border-left: 0;
+	border-right: 4px solid var(--alo-blog-primary);
+	padding-left: 0;
+	padding-right: 16px;
+}
+
+.alo-blog-tags a {
+	margin: 0 0 6px 6px;
+}
+
+.widget-title::after {
+	left: auto;
+	right: 0;
+}
+
+.comment-list .children {
+	padding-left: 0;
+	padding-right: 20px;
+}
+
+.post-navigation .nav-next {
+	text-align: left;
+}
+
+@media (max-width: 600px) {
+	.post-navigation .nav-next {
+		text-align: right;
+	}
+}
+
+.alignleft {
+	float: right;
+	margin: 0 0 20px 20px;
+}
+
+.alignright {
+	float: left;
+	margin: 0 20px 20px 0;
+}
+
+.alo-blog-progress-bar {
+	border-radius: 2px 0 0 2px;
+}

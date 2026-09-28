@@ -24,6 +24,12 @@ Appearance > Customize > Theme Options: footer credit text, page sidebar positio
 
 == Changelog ==
 
+= 1.0.2 =
+* Keyboard-driven submenu open/close behavior and cleared page links below floated content.
+
+= 1.0.1 =
+* Accessible sub-menu toggles with focus-trapped mobile menu, long-title wrapping, float clearing, RTL stylesheet, and expanded editor styles.
+
 = 1.0.0 =
 * Initial release.
 

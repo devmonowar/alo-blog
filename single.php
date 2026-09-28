@@ -20,17 +20,23 @@ get_header();
 			the_post();
 			?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<h1><?php echo esc_html( get_the_title() ); ?></h1>
-				<p class="alo-blog-meta">
-					<?php
-					printf(
-						/* translators: 1: post date, 2: author name. */
-						esc_html__( 'Posted on %1$s by %2$s', 'alo-blog' ),
-						esc_html( get_the_date() ),
-						esc_html( get_the_author() )
-					);
-					?>
-				</p>
+			<?php
+			if ( get_the_title() ) {
+				the_title( '<h1>', '</h1>' );
+			} else {
+				echo '<h1>' . esc_html__( '(No title)', 'alo-blog' ) . '</h1>';
+			}
+			?>
+			<p class="alo-blog-meta">
+				<?php
+				printf(
+					/* translators: 1: post date, 2: author link. */
+					esc_html__( 'Posted on %1$s by %2$s', 'alo-blog' ),
+					'<a href="' . esc_url( get_day_link( get_the_time( 'Y' ), get_the_time( 'm' ), get_the_time( 'd' ) ) ) . '">' . esc_html( get_the_date() ) . '</a>',
+					'<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a>'
+				);
+				?>
+			</p>
 			<?php
 			if ( has_post_thumbnail() ) {
 				?>
@@ -45,13 +51,13 @@ get_header();
 					the_content();
 					wp_link_pages(
 						array(
-							'before' => '<p>' . esc_html__( 'Pages:', 'alo-blog' ),
+							'before' => '<p class="alo-blog-page-links">' . esc_html__( 'Pages:', 'alo-blog' ),
 							'after'  => '</p>',
 						)
 					);
 					?>
 				</div>
-			<?php the_tags( '<p class="alo-blog-tags">', ' ', '</p>' ); ?>
+			<?php the_tags( '<p class="alo-blog-tags"><span class="screen-reader-text">' . esc_html__( 'Tags:', 'alo-blog' ) . '</span> ', ' ', '</p>' ); ?>
 			<?php if ( get_theme_mod( 'aloblog_show_author_box', true ) && get_the_author_meta( 'ID' ) ) { ?>
 			<div class="alo-blog-author-box">
 				<?php echo get_avatar( get_the_author_meta( 'ID' ), 64 ); ?>

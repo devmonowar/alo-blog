@@ -14,6 +14,9 @@
 	if ( ! bar || ! article ) {
 		return;
 	}
+	if ( window.matchMedia && window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches ) {
+		return;
+	}
 
 	function aloblogUpdateProgress() {
 		var start = article.offsetTop;
@@ -39,7 +42,7 @@
 		}
 	}
 
-	document.addEventListener( 'scroll', aloblogOnScroll, { passive: true } );
+	window.addEventListener( 'scroll', aloblogOnScroll, { passive: true } );
 	window.addEventListener( 'resize', aloblogOnScroll );
 	aloblogUpdateProgress();
 })();

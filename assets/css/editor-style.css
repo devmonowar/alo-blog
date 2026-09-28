@@ -2,7 +2,7 @@
  * Alo Blog editor styles - match front-end reading experience.
  *
  * @package Alo_Blog
- * @since 1.0.0
+ * @since 1.0.1
  */
 
 body {
@@ -10,4 +10,55 @@ body {
 	font-size: 17px;
 	line-height: 1.7;
 	color: #1a1a1a;
+	background: #ffffff;
+}
+
+a {
+	color: #1d4ed8;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	line-height: 1.25;
+	overflow-wrap: break-word;
+}
+
+blockquote {
+	margin: 0 0 16px;
+	padding: 12px 20px;
+	border-left: 4px solid #1d4ed8;
+	color: #5f6368;
+}
+
+.wp-block-quote.is-style-accent {
+	border-left-color: #1d4ed8;
+	background: #eef2ff;
+	padding: 16px 20px;
+	border-radius: 0 8px 8px 0;
+}
+
+pre {
+	overflow: auto;
+	padding: 16px;
+	border: 1px solid #e5e7eb;
+	border-radius: 8px;
+}
+
+table {
+	width: 100%;
+	margin: 0 0 16px;
+	border-collapse: collapse;
+}
+
+th,
+td {
+	padding: 8px 12px;
+	border: 1px solid #e5e7eb;
+	text-align: left;
+}
+
+th {
+	background: #f3f4f6;
 }

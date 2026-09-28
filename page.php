@@ -20,7 +20,13 @@ $aloblog_position = get_theme_mod( 'aloblog_sidebar_position', 'right' );
 			the_post();
 			?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<h1><?php echo esc_html( get_the_title() ); ?></h1>
+				<?php
+				if ( get_the_title() ) {
+					the_title( '<h1>', '</h1>' );
+				} else {
+					echo '<h1>' . esc_html__( '(No title)', 'alo-blog' ) . '</h1>';
+				}
+				?>
 				<?php
 				if ( has_post_thumbnail() ) {
 					?>
@@ -35,7 +41,7 @@ $aloblog_position = get_theme_mod( 'aloblog_sidebar_position', 'right' );
 					the_content();
 					wp_link_pages(
 						array(
-							'before' => '<p>' . esc_html__( 'Pages:', 'alo-blog' ),
+							'before' => '<p class="alo-blog-page-links">' . esc_html__( 'Pages:', 'alo-blog' ),
 							'after'  => '</p>',
 						)
 					);

@@ -83,6 +83,14 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
+#: index.php
+msgid "Latest Posts"
+msgstr ""
+
+#: single.php
+msgid "Tags:"
+msgstr ""
+
 #: header.php:44
 #: inc/setup.php:52
 msgid "Primary Menu"
@@ -126,6 +134,14 @@ msgstr ""
 
 #: inc/setup.php:53
 msgid "Footer Menu"
+msgstr ""
+
+#: inc/setup.php
+msgid "Expand submenu"
+msgstr ""
+
+#: inc/setup.php
+msgid "Collapse submenu"
 msgstr ""
 
 #: inc/setup.php:65
@@ -237,6 +253,11 @@ msgstr ""
 
 #: template-parts/content/content.php
 msgid "Continue reading"
+msgstr ""
+
+#: single.php
+#: template-parts/content/content.php
+msgid "(No title)"
 msgstr ""
 
 #: template-parts/content/content-none.php:14

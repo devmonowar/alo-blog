@@ -13,10 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<!-- wp:quote -->
-<blockquote class="wp-block-quote">
-	<!-- wp:paragraph -->
-	<p><?php echo esc_html__( 'Good writing is clear thinking made visible.', 'alo-blog' ); ?></p>
-	<!-- /wp:paragraph -->
-</blockquote>
+<!-- wp:quote {"className":"is-style-accent"} -->
+<blockquote class="wp-block-quote is-style-accent"><!-- wp:paragraph -->
+<p><?php echo esc_html__( 'Good writing is clear thinking made visible.', 'alo-blog' ); ?></p>
+<!-- /wp:paragraph --><cite><?php echo esc_html__( 'A writer’s notebook', 'alo-blog' ); ?></cite></blockquote>
 <!-- /wp:quote -->

@@ -217,6 +217,10 @@ msgstr ""
 msgid "Good writing is clear thinking made visible."
 msgstr ""
 
+#: patterns/quote.php:19
+msgid "A writer’s notebook"
+msgstr ""
+
 #. translators: %s: search query.
 #: search.php:20
 #, php-format

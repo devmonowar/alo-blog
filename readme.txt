@@ -24,6 +24,9 @@ Appearance > Customize > Theme Options: footer credit text, page sidebar positio
 
 == Changelog ==
 
+= 1.0.3 =
+* Restyled block patterns with theme colors and spacing, refreshed screenshot.
+
 = 1.0.2 =
 * Keyboard-driven submenu open/close behavior and cleared page links below floated content.
 

@@ -10,7 +10,13 @@ Lightweight personal blog theme for writers. Fast, readable, keyboard and screen
 
 == Description ==
 
-Alo Blog is a lightweight personal writing theme. Single-column reading list, right sidebar on blog and single posts, threaded comments, translation-ready and RTL-friendly. No page builder, no slider, no upsells.
+Alo Blog is a lightweight personal writing theme by Monowar Hossain. Single-column reading list, right sidebar on blog and single posts, threaded comments, translation-ready and RTL-friendly. No page builder, no slider, no upsells.
+
+* Accessibility-first: skip link, visible focus, keyboard-operable menus, screen-reader labels.
+* Reader-first typography: 720px measure, 17px system-font stack, generous line-height.
+* Writer-friendly details: sticky Featured posts, author box with avatar, tag pills, reading progress bar.
+* Block-ready: editor styles that match the front end, accent quote style, three starter patterns.
+* Privacy-respecting: zero external requests, zero tracking, zero bundled scripts.
 
 == Frequently Asked Questions ==
 
@@ -21,6 +27,10 @@ No. The theme works fully on its own.
 = Where are the theme options? =
 
 Appearance > Customize > Theme Options: footer credit text, page sidebar position, excerpt length, author box visibility.
+
+= Where do I get support or report a bug? =
+
+Post in the WordPress.org support forum for Alo Blog, or open an issue at https://github.com/devmonowar/alo-blog. Please include your WordPress version and steps to reproduce.
 
 == Changelog ==
 

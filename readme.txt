@@ -43,4 +43,5 @@ Alo Blog is distributed under the terms of the GNU GPL v2 or later.
 
 == Resources ==
 
-* No bundled third-party resources in v1. System font stack only, no external assets.
+* No bundled third-party code in v1. System font stack only, no external assets.
+* Demo featured photos (local demo and screenshot only, not bundled): WordPress Photo Directory, CC0 public domain.

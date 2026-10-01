@@ -57,8 +57,8 @@ function aloblog_setup() {
 	add_theme_support(
 		'starter-content',
 		array(
-			'posts'   => array(
-				'home' => array(
+			'posts'     => array(
+				'home'  => array(
 					'post_type'    => 'page',
 					'post_title'   => esc_html__( 'Welcome', 'alo-blog' ),
 					'post_content' => esc_html__( 'This is a starter page. Replace it with your own words, then set your front page under Settings, Reading.', 'alo-blog' ),
@@ -74,7 +74,7 @@ function aloblog_setup() {
 					'post_content' => esc_html__( 'Your posts will appear here.', 'alo-blog' ),
 				),
 			),
-			'options' => array(
+			'options'   => array(
 				'show_on_front'  => 'page',
 				'page_on_front'  => '{{home}}',
 				'page_for_posts' => '{{blog}}',

@@ -54,7 +54,7 @@ function aloblog_related_ids( $post_id = 0, $number = 3 ) {
 
 	$cats = wp_get_post_categories( $post_id, array( 'fields' => 'ids' ) );
 	if ( ! empty( $cats ) && ! is_wp_error( $cats ) ) {
-		$q = new WP_Query(
+		$q     = new WP_Query(
 			array(
 				'cat'                 => $cats,
 				'posts_per_page'      => $number,
@@ -71,14 +71,14 @@ function aloblog_related_ids( $post_id = 0, $number = 3 ) {
 	if ( count( $found ) < $number ) {
 		$tags = wp_get_post_tags( $post_id, array( 'fields' => 'ids' ) );
 		if ( ! empty( $tags ) && ! is_wp_error( $tags ) ) {
-			$q = new WP_Query(
+			$q     = new WP_Query(
 				array(
-					'tag__in'            => $tags,
-					'posts_per_page'    => $number - count( $found ),
-					'post__not_in'      => array_merge( array( $post_id ), $found ),
+					'tag__in'             => $tags,
+					'posts_per_page'      => $number - count( $found ),
+					'post__not_in'        => array_merge( array( $post_id ), $found ),
 					'ignore_sticky_posts' => true,
-					'no_found_rows'     => true,
-					'fields'            => 'ids',
+					'no_found_rows'       => true,
+					'fields'              => 'ids',
 				)
 			);
 			$found = array_merge( $found, $q->posts );

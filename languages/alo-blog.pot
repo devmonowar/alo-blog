@@ -330,3 +330,31 @@ msgstr[1] ""
 #: single.php
 msgid "Keep reading"
 msgstr ""
+
+#: inc/setup.php
+msgid "Welcome"
+msgstr ""
+
+#: inc/setup.php
+msgid "This is a starter page. Replace it with your own words, then set your front page under Settings, Reading."
+msgstr ""
+
+#: inc/setup.php
+msgid "About"
+msgstr ""
+
+#: inc/setup.php
+msgid "Write a few honest lines about who you are and why you write."
+msgstr ""
+
+#: inc/setup.php
+msgid "Writing"
+msgstr ""
+
+#: inc/setup.php
+msgid "Your posts will appear here."
+msgstr ""
+
+#: page-full-width.php
+msgid "Full Width"
+msgstr ""

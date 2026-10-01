@@ -51,6 +51,7 @@ function aloblog_setup() {
 		array(
 			'primary' => esc_html__( 'Primary Menu', 'alo-blog' ),
 			'footer'  => esc_html__( 'Footer Menu', 'alo-blog' ),
+			'social'  => esc_html__( 'Social Links', 'alo-blog' ),
 		)
 	);
 
@@ -93,6 +94,26 @@ function aloblog_setup() {
 	);
 }
 add_action( 'after_setup_theme', 'aloblog_setup' );
+
+/**
+ * Adds rel="noopener" to external links in the Social Links menu.
+ *
+ * @param array    $atts Link attributes.
+ * @param WP_Post  $item Menu item object.
+ * @param stdClass $args Nav menu arguments.
+ * @return array Filtered attributes.
+ */
+function aloblog_social_menu_rel( $atts, $item, $args ) {
+	if ( isset( $args->theme_location ) && 'social' === $args->theme_location ) {
+		$url_host  = wp_parse_url( $item->url, PHP_URL_HOST );
+		$home_host = wp_parse_url( home_url(), PHP_URL_HOST );
+		if ( $url_host && $home_host && $url_host !== $home_host ) {
+			$atts['rel'] = trim( ( isset( $atts['rel'] ) ? $atts['rel'] : '' ) . ' noopener' );
+		}
+	}
+	return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'aloblog_social_menu_rel', 10, 3 );
 
 /**
  * Registers footer widget areas (max 3).

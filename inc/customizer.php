@@ -126,6 +126,27 @@ function aloblog_customize_register( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_setting(
+		'aloblog_post_layout',
+		array(
+			'default'           => 'list',
+			'type'              => 'theme_mod',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'aloblog_sanitize_post_layout',
+		)
+	);
+	$wp_customize->add_control(
+		'aloblog_post_layout',
+		array(
+			'label'   => esc_html__( 'Post list layout', 'alo-blog' ),
+			'section' => 'aloblog_options',
+			'type'    => 'select',
+			'choices' => array(
+				'list' => esc_html__( 'Single-column list', 'alo-blog' ),
+				'grid' => esc_html__( 'Two-column grid', 'alo-blog' ),
+			),
+		)
+	);
+	$wp_customize->add_setting(
 		'aloblog_color_scheme',
 		array(
 			'default'           => 'auto',
@@ -177,6 +198,20 @@ function aloblog_sanitize_color_scheme( $value ) {
 	}
 	return $value;
 }
+/**
+ * Sanitizes post list layout against whitelist.
+ *
+ * @param string $value Raw value.
+ * @return string list or grid.
+ */
+function aloblog_sanitize_post_layout( $value ) {
+	$allowed = array( 'list', 'grid' );
+	if ( ! in_array( $value, $allowed, true ) ) {
+		return 'list';
+	}
+	return $value;
+}
+
 /**
  * Sanitizes checkbox to boolean.
  *

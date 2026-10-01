@@ -95,6 +95,24 @@ h6,
 	margin-bottom: 20px;
 }
 
+/* Two-column grid for post lists (Customizer: Post list layout). */
+.alo-blog-cards--grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 20px;
+	margin-bottom: 20px;
+}
+
+.alo-blog-cards--grid .alo-blog-card {
+	margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+	.alo-blog-cards--grid {
+		grid-template-columns: 1fr;
+	}
+}
+
 .screen-reader-text {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
@@ -1178,6 +1196,24 @@ body.admin-bar .alo-blog-progress {
 }
 
 #footer-menu a:hover {
+	text-decoration: underline;
+}
+
+/* Social links menu: same inline treatment as the footer menu. */
+#social-menu {
+	display: flex;
+	gap: 16px;
+	flex-wrap: wrap;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#social-menu a {
+	text-decoration: none;
+}
+
+#social-menu a:hover {
 	text-decoration: underline;
 }
 

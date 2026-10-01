@@ -47,6 +47,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 					)
 				);
 			}
+			if ( has_nav_menu( 'social' ) ) {
+				wp_nav_menu(
+					array(
+						'theme_location' => 'social',
+						'menu_id'        => 'social-menu',
+						'container'      => false,
+						'depth'          => 1,
+						'fallback_cb'    => false,
+					)
+				);
+			}
 			?>
 			<p class="alo-blog-copyright">
 				<?php

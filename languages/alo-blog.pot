@@ -378,3 +378,25 @@ msgstr ""
 #: header.php
 msgid "Toggle color scheme"
 msgstr ""
+
+#: inc/customizer.php
+msgid "Post list layout"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Single-column list"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Two-column grid"
+msgstr ""
+
+#: patterns/post-grid.php
+msgctxt "Pattern title"
+msgid "Post Grid"
+msgstr ""
+
+#: patterns/post-grid.php
+msgctxt "Pattern description"
+msgid "Two-column grid of recent posts with image, title, date and excerpt."
+msgstr ""

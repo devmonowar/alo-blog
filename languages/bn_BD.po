@@ -1,0 +1,319 @@
+# Copyright (C) 2026 Monowar Hossain
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Alo Blog 1.0.4\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/alo-blog\n"
+"Last-Translator: Monowar Hossain <devmonowar@gmail.com>\n"
+"Language-Team: Bengali <bn_BD@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-13T19:06:04+02:00\n"
+"PO-Revision-Date: 2026-10-01 00:00+0600\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"Language: bn_BD\n"
+"X-Domain: alo-blog\n"
+
+#. Theme Name of the theme
+#: style.css
+#: inc/setup.php:97
+msgid "Alo Blog"
+msgstr ""
+
+#: inc/setup.php
+msgid "Accent"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Lightweight personal blog theme for writers. Fast, readable, keyboard and screen-reader friendly."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "Monowar Hossain"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://devmonowar.github.io/"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://github.com/devmonowar/alo-blog"
+msgstr ""
+
+#: 404.php:16
+msgid "Page not found."
+msgstr ""
+
+#: 404.php:17
+msgid "The page you are looking for does not exist. Try a search or go back home:"
+msgstr ""
+
+#: 404.php:19
+msgid "Go to Homepage"
+msgstr ""
+
+#: comments.php:15
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#. translators: %s: number of comments.
+#: comments.php:27
+#, php-format
+msgctxt "comments title"
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:49
+msgid "Comments are closed."
+msgstr ""
+
+#. translators: 1: current year, 2: site name.
+#: footer.php:48
+#, php-format
+msgid "© %1$s %2$s. All rights reserved."
+msgstr ""
+
+#: header.php:22
+msgid "Skip to content"
+msgstr ""
+
+#: index.php
+msgid "Latest Posts"
+msgstr ""
+
+#: single.php
+msgid "Tags:"
+msgstr ""
+
+#: header.php:44
+#: inc/setup.php:52
+msgid "Primary Menu"
+msgstr ""
+
+#: header.php:48
+msgid "Menu"
+msgstr ""
+
+#: inc/customizer.php:24
+msgid "Theme Options"
+msgstr ""
+
+#: inc/customizer.php:27
+msgid "Simple display options for Alo Blog."
+msgstr ""
+
+#: inc/customizer.php:43
+msgid "Footer credit text"
+msgstr ""
+
+#: inc/customizer.php:61
+msgid "Page sidebar position"
+msgstr ""
+
+#: inc/customizer.php:65
+msgid "Right sidebar"
+msgstr ""
+
+#: inc/customizer.php:66
+msgid "No sidebar"
+msgstr ""
+
+#: inc/customizer.php:83
+msgid "Excerpt length (words)"
+msgstr ""
+
+#: inc/customizer.php:106
+msgid "Show author box on single posts"
+msgstr ""
+
+#: inc/setup.php:53
+msgid "Footer Menu"
+msgstr ""
+
+#: inc/setup.php
+msgid "Expand submenu"
+msgstr ""
+
+#: inc/setup.php
+msgid "Collapse submenu"
+msgstr ""
+
+#: inc/setup.php:65
+msgid "Sidebar"
+msgstr ""
+
+#: inc/setup.php:67
+msgid "Appears on posts and pages with sidebar layout."
+msgstr ""
+
+#. translators: %d: footer widget area number.
+#: inc/setup.php:78
+#, php-format
+msgid "Footer %d"
+msgstr ""
+
+#: inc/setup.php:80
+msgid "Appears in the footer."
+msgstr ""
+
+#: page.php:34
+#: single.php:42
+msgid "Pages:"
+msgstr ""
+
+#: patterns/cta-subscribe-note.php
+msgctxt "Pattern title"
+msgid "Subscribe Note"
+msgstr ""
+
+#: patterns/cta-subscribe-note.php
+msgctxt "Pattern description"
+msgid "Text-only call-to-action note without any form."
+msgstr ""
+
+#: patterns/cta-subscribe-note.php:19
+msgid "Follow along"
+msgstr ""
+
+#: patterns/cta-subscribe-note.php:22
+msgid "Fresh essays, no noise. Come back anytime."
+msgstr ""
+
+#: patterns/hero-intro.php
+msgctxt "Pattern title"
+msgid "Hero Intro"
+msgstr ""
+
+#: patterns/hero-intro.php
+msgctxt "Pattern description"
+msgid "Simple intro heading with short text for the top of a page."
+msgstr ""
+
+#: patterns/hero-intro.php:19
+msgid "Write clearly, publish simply."
+msgstr ""
+
+#: patterns/hero-intro.php:22
+msgid "A fast, readable home for your personal writing. No clutter, just words."
+msgstr ""
+
+#: patterns/quote.php
+msgctxt "Pattern title"
+msgid "Quote"
+msgstr ""
+
+#: patterns/quote.php
+msgctxt "Pattern description"
+msgid "Simple pull quote for articles."
+msgstr ""
+
+#: patterns/quote.php:19
+msgid "Good writing is clear thinking made visible."
+msgstr ""
+
+#: patterns/quote.php:19
+msgid "A writer’s notebook"
+msgstr ""
+
+#. translators: %s: search query.
+#: search.php:20
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:14
+#: searchform.php:16
+msgid "Search"
+msgstr ""
+
+#: searchform.php:15
+msgid "Search…"
+msgstr ""
+
+#. translators: 1: post date, 2: author name.
+#: single.php:26
+#: template-parts/content/content.php:28
+#, php-format
+msgid "Posted on %1$s by %2$s"
+msgstr ""
+
+#: single.php
+msgid "Previous:"
+msgstr ""
+
+#: single.php
+msgid "Next:"
+msgstr ""
+
+#: template-parts/content/content.php
+msgid "Featured"
+msgstr ""
+
+#: template-parts/content/content.php
+msgid "Continue reading"
+msgstr ""
+
+#: single.php
+#: template-parts/content/content.php
+msgid "(No title)"
+msgstr ""
+
+#: template-parts/content/content-none.php:14
+msgid "Nothing found."
+msgstr ""
+
+#: template-parts/content/content-none.php:15
+msgid "Try a different search:"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Background"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Text"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Primary"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Muted"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Footer Background"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Medium"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra Large"
+msgstr ""

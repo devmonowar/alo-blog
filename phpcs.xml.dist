@@ -4,4 +4,15 @@
 	<file>.</file>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
 	<rule ref="WordPress-Extra"/>
+	<rule ref="PHPCompatibilityWP"/>
+	<config name="testVersion" value="7.4-"/>
+	<rule ref="WordPress.WP.I18n"/>
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="aloblog_"/>
+				<element value="ALOBLOG_"/>
+			</property>
+		</properties>
+	</rule>
 </ruleset>

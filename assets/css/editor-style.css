@@ -39,8 +39,8 @@ blockquote {
 }
 
 .wp-block-quote.is-style-accent {
-	border-left-color: var(--alo-blog-primary);
-	background: var(--alo-blog-accent-bg);
+	border-left-color: var(--alo-blog-primary, #1d4ed8);
+	background: var(--alo-blog-accent-bg, #eef2ff);
 	padding: 16px 20px;
 	border-radius: 0 8px 8px 0;
 }

@@ -1,0 +1,12 @@
+# Files for the GitHub repo that never ship in the release ZIP.
+.git/
+.github/
+.gitattributes
+.gitignore
+CONTRIBUTING.md
+phpcs.xml.dist
+composer.json
+composer.lock
+/vendor/
+*.log
+.DS_Store

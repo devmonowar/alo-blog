@@ -1,0 +1,31 @@
+name: Bug report
+description: Something broken in the Alo Blog theme
+body:
+  - type: input
+    attributes:
+      label: WordPress version
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: PHP version
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Theme version
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What you expected
+  - type: textarea
+    attributes:
+      label: What happened instead
+    validations:
+      required: true

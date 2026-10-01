@@ -3,7 +3,8 @@
 	"description": "Alo Blog — lightweight personal blog theme.",
 	"license": "GPL-2.0-or-later",
 	"require-dev": {
-		"wp-coding-standards/wpcs": "^3.0"
+		"wp-coding-standards/wpcs": "^3.0",
+		"phpcompatibility/phpcompatibility-wp": "^2.1"
 	},
 	"scripts": {
 		"lint": "phpcs --standard=WordPress-Extra --extensions=php --ignore=*/vendor/* .",

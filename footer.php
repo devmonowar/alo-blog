@@ -15,18 +15,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="alo-blog-container">
 		<?php
 		$aloblog_active_columns = 0;
-		for ( $i = 1; $i <= 3; $i++ ) {
-			if ( is_active_sidebar( 'footer-' . $i ) ) {
+		for ( $aloblog_i = 1; $aloblog_i <= 3; $aloblog_i++ ) {
+			if ( is_active_sidebar( 'footer-' . $aloblog_i ) ) {
 				++$aloblog_active_columns;
 			}
 		}
 		if ( $aloblog_active_columns > 0 ) {
 			?>
 			<div class="alo-blog-footer-widgets alo-blog-footer-widgets--<?php echo esc_attr( $aloblog_active_columns ); ?>">
-				<?php for ( $i = 1; $i <= 3; $i++ ) { ?>
-					<?php if ( is_active_sidebar( 'footer-' . $i ) ) { ?>
+				<?php for ( $aloblog_i = 1; $aloblog_i <= 3; $aloblog_i++ ) { ?>
+					<?php if ( is_active_sidebar( 'footer-' . $aloblog_i ) ) { ?>
 					<div class="alo-blog-footer-widget">
-						<?php dynamic_sidebar( 'footer-' . $i ); ?>
+						<?php dynamic_sidebar( 'footer-' . $aloblog_i ); ?>
 					</div>
 					<?php } ?>
 				<?php } ?>

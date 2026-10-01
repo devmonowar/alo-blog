@@ -57,7 +57,7 @@ function aloblog_setup() {
 add_action( 'after_setup_theme', 'aloblog_setup' );
 
 /**
- * Registers footer widget areas (max 3, per scope lock).
+ * Registers footer widget areas (max 3).
  */
 function aloblog_widgets_init() {
 	register_sidebar(
@@ -108,7 +108,7 @@ function aloblog_register_block_styles() {
 		array(
 			'name'         => 'accent',
 			'label'        => __( 'Accent', 'alo-blog' ),
-			'inline_style' => '.wp-block-quote.is-style-accent{border-left-color:var(--alo-blog-primary);background:var(--alo-blog-accent-bg);padding:16px 20px;border-radius:0 8px 8px 0;}',
+			'inline_style' => '.wp-block-quote.is-style-accent{border-left-color:var(--alo-blog-primary,#1d4ed8);background:var(--alo-blog-accent-bg,#eef2ff);padding:16px 20px;border-radius:0 8px 8px 0;}',
 		)
 	);
 }

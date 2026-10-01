@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		$aloblog_active_columns = 0;
 		for ( $i = 1; $i <= 3; $i++ ) {
 			if ( is_active_sidebar( 'footer-' . $i ) ) {
-				$aloblog_active_columns++;
+				++$aloblog_active_columns;
 			}
 		}
 		if ( $aloblog_active_columns > 0 ) {

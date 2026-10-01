@@ -24,6 +24,13 @@ Requires WordPress 6.4+ and PHP 7.4+.
 * Translation-ready with RTL stylesheet, threaded comments, right sidebar + footer widgets.
 * Privacy-respecting: zero external requests, zero tracking, no page builder, no slider, no upsells.
 
+## Getting started
+
+* After activating, open Appearance → Customize → Theme Options: footer credit text, page sidebar position (“Page sidebar position” affects pages), excerpt length, author box and reading-time display.
+* Need a page without sidebar? Set its Template to “Full Width”.
+* New site? The Customizer offers starter content (Welcome, About and Writing pages, Primary menu) — a starting point, not a demo to keep.
+* Related posts appear automatically under single posts that share a category or tag.
+
 ## Support
 
 * WordPress.org forum: https://wordpress.org/support/theme/alo-blog/

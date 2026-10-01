@@ -26,7 +26,7 @@ No. The theme works fully on its own.
 
 = Where are the theme options? =
 
-Appearance > Customize > Theme Options: footer credit text, page sidebar position, excerpt length, author box visibility.
+Appearance > Customize > Theme Options: footer credit text, page sidebar position, excerpt length, author box visibility, reading-time display.
 
 = Where do I get support or report a bug? =
 

@@ -317,3 +317,17 @@ msgstr ""
 msgctxt "Font size name"
 msgid "Extra Large"
 msgstr ""
+
+#: inc/customizer.php
+msgid "Show reading time on single posts"
+msgstr ""
+
+#: inc/template-tags.php
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] ""
+msgstr[1] ""
+
+#: single.php
+msgid "Keep reading"
+msgstr ""

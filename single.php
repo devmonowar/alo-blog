@@ -35,6 +35,10 @@ get_header();
 					'<a href="' . esc_url( get_day_link( get_the_time( 'Y' ), get_the_time( 'm' ), get_the_time( 'd' ) ) ) . '">' . esc_html( get_the_date() ) . '</a>',
 					'<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a>'
 				);
+				if ( get_theme_mod( 'aloblog_show_reading_time', true ) ) {
+					echo ' <span aria-hidden="true">·</span> ';
+					aloblog_the_reading_time();
+				}
 				?>
 			</p>
 			<?php
@@ -74,6 +78,26 @@ get_header();
 				</div>
 			</div>
 			<?php } ?>
+			<?php
+			$aloblog_related = aloblog_related_ids( get_the_ID(), 3 );
+			if ( ! empty( $aloblog_related ) ) {
+				?>
+			<section class="alo-blog-related" aria-labelledby="alo-blog-related-heading">
+				<h2 id="alo-blog-related-heading"><?php esc_html_e( 'Keep reading', 'alo-blog' ); ?></h2>
+				<ul>
+					<?php
+					foreach ( $aloblog_related as $aloblog_related_id ) {
+						$aloblog_related_title = get_the_title( $aloblog_related_id );
+						?>
+					<li><a href="<?php echo esc_url( get_permalink( $aloblog_related_id ) ); ?>"><?php echo esc_html( $aloblog_related_title ? $aloblog_related_title : __( '(No title)', 'alo-blog' ) ); ?></a></li>
+						<?php
+					}
+					?>
+				</ul>
+			</section>
+				<?php
+			}
+			?>
 				<?php
 				the_post_navigation(
 					array(

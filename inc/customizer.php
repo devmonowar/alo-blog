@@ -108,6 +108,23 @@ function aloblog_customize_register( $wp_customize ) {
 			'type'    => 'checkbox',
 		)
 	);
+	$wp_customize->add_setting(
+		'aloblog_show_reading_time',
+		array(
+			'default'           => true,
+			'type'              => 'theme_mod',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'aloblog_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control(
+		'aloblog_show_reading_time',
+		array(
+			'label'   => esc_html__( 'Show reading time on single posts', 'alo-blog' ),
+			'section' => 'aloblog_options',
+			'type'    => 'checkbox',
+		)
+	);
 }
 add_action( 'customize_register', 'aloblog_customize_register' );
 

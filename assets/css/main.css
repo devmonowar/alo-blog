@@ -498,6 +498,21 @@ h6,
 	margin: 0 0 8px;
 }
 
+.alo-blog-related {
+	border-top: 1px solid var(--alo-blog-border);
+	margin-top: 24px;
+	padding-top: 8px;
+}
+
+.alo-blog-related ul {
+	margin: 12px 0;
+	padding-inline-start: 20px;
+}
+
+.alo-blog-related li {
+	margin-bottom: 8px;
+}
+
 .alo-blog-author-text p:last-child {
 	margin-bottom: 0;
 }

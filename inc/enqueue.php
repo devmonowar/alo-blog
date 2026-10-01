@@ -29,5 +29,26 @@ function aloblog_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	if ( 'auto' === get_theme_mod( 'aloblog_color_scheme', 'auto' ) ) {
+		wp_enqueue_script( 'aloblog-scheme-toggle', get_template_directory_uri() . '/assets/js/scheme-toggle.js', array(), $version, true );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'aloblog_scripts' );
+
+/**
+ * Prints the color-scheme choice on <html> before first paint.
+ *
+ * Explicit Customizer choice wins; otherwise the stored toggle choice
+ * (localStorage, set by the header button) or the OS setting decides.
+ * Kept dependency-free and under 1 KB.
+ */
+function aloblog_scheme_head_script() {
+	$mod = get_theme_mod( 'aloblog_color_scheme', 'auto' );
+	if ( 'light' === $mod || 'dark' === $mod ) {
+		echo '<script>document.documentElement.dataset.scheme=' . wp_json_encode( $mod ) . ';</script>' . "\n";
+		return;
+	}
+	echo "<script>(function(){try{var s=localStorage.getItem('aloblog-scheme');if(s==='light'||s==='dark'){document.documentElement.dataset.scheme=s;}else if(matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.dataset.scheme='dark';}}catch(e){}})();</script>\n";
+}
+add_action( 'wp_head', 'aloblog_scheme_head_script', 0 );

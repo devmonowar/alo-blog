@@ -125,6 +125,28 @@ function aloblog_customize_register( $wp_customize ) {
 			'type'    => 'checkbox',
 		)
 	);
+	$wp_customize->add_setting(
+		'aloblog_color_scheme',
+		array(
+			'default'           => 'auto',
+			'type'              => 'theme_mod',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'aloblog_sanitize_color_scheme',
+		)
+	);
+	$wp_customize->add_control(
+		'aloblog_color_scheme',
+		array(
+			'label'   => esc_html__( 'Color scheme', 'alo-blog' ),
+			'section' => 'aloblog_options',
+			'type'    => 'radio',
+			'choices' => array(
+				'auto'  => esc_html__( 'Auto (follow system)', 'alo-blog' ),
+				'light' => esc_html__( 'Light', 'alo-blog' ),
+				'dark'  => esc_html__( 'Dark', 'alo-blog' ),
+			),
+		)
+	);
 }
 add_action( 'customize_register', 'aloblog_customize_register' );
 
@@ -142,6 +164,19 @@ function aloblog_sanitize_sidebar_position( $value ) {
 	return $value;
 }
 
+/**
+ * Sanitizes color scheme against whitelist.
+ *
+ * @param string $value Raw value.
+ * @return string auto, light or dark.
+ */
+function aloblog_sanitize_color_scheme( $value ) {
+	$allowed = array( 'auto', 'light', 'dark' );
+	if ( ! in_array( $value, $allowed, true ) ) {
+		return 'auto';
+	}
+	return $value;
+}
 /**
  * Sanitizes checkbox to boolean.
  *

@@ -18,6 +18,7 @@
 	--alo-blog-footer-bg: #111827;
 	--alo-blog-footer-text: #f9fafb;
 	--alo-blog-accent-bg: #eef2ff;
+	--alo-blog-table-head-bg: #f3f4f6;
 	--alo-blog-content-width: 720px;
 	--alo-blog-container-width: 1200px;
 }
@@ -801,7 +802,7 @@ img {
 }
 
 .alo-blog-entry-content th {
-	background: #f3f4f6;
+	background: var(--alo-blog-table-head-bg);
 }
 
 .alo-blog-entry-content code {
@@ -1002,7 +1003,7 @@ a.wp-block-query-pagination-previous:hover {
 }
 
 .comment-content th {
-	background: #f3f4f6;
+	background: var(--alo-blog-table-head-bg);
 }
 
 .comment-content dt,
@@ -1201,3 +1202,105 @@ body.admin-bar .alo-blog-progress {
 		align-items: flex-start;
 	}
 }
+
+/* Scheme toggle in the header. */
+.alo-blog-scheme-toggle {
+	margin-inline-start: 12px;
+	padding: 8px 12px;
+	border: 1px solid var(--alo-blog-border);
+	border-radius: 6px;
+	background: transparent;
+	color: var(--alo-blog-text);
+	font: inherit;
+	font-size: 13px;
+	cursor: pointer;
+}
+
+.alo-blog-scheme-toggle .alo-blog-scheme-light-label {
+	display: none;
+}
+
+.alo-blog-scheme-toggle[aria-pressed="true"] .alo-blog-scheme-dark-label {
+	display: none;
+}
+
+.alo-blog-scheme-toggle[aria-pressed="true"] .alo-blog-scheme-light-label {
+	display: inline;
+}
+
+/* Dark color scheme: explicit choice wins, otherwise follow the OS. */
+html[data-scheme="dark"] {
+	--alo-blog-bg: #0f172a;
+	--alo-blog-text: #e5e9f0;
+	--alo-blog-muted: #9aa5b5;
+	--alo-blog-border: #26334d;
+	--alo-blog-footer-bg: #020617;
+	--alo-blog-footer-text: #e5e9f0;
+	--alo-blog-primary: #93c5fd;
+	--alo-blog-accent-bg: #16295c;
+	--alo-blog-table-head-bg: #1c2942;
+}
+
+@media (prefers-color-scheme: dark) {
+	html:not([data-scheme="light"]) {
+		--alo-blog-bg: #0f172a;
+		--alo-blog-text: #e5e9f0;
+		--alo-blog-muted: #9aa5b5;
+		--alo-blog-border: #26334d;
+		--alo-blog-footer-bg: #020617;
+		--alo-blog-footer-text: #e5e9f0;
+		--alo-blog-primary: #93c5fd;
+		--alo-blog-accent-bg: #16295c;
+		--alo-blog-table-head-bg: #1c2942;
+	}
+}
+
+/* White text on primary surfaces fails on light-blue dark primary: use ink. */
+html[data-scheme="dark"] .alo-blog-menu-toggle,
+html[data-scheme="dark"] .alo-blog-search-form button,
+html[data-scheme="dark"] .alo-blog-sticky-label,
+html[data-scheme="dark"] .page-numbers.current,
+html[data-scheme="dark"] a.wp-block-query-pagination-previous:hover,
+html[data-scheme="dark"] a.wp-block-query-pagination-next:hover,
+html[data-scheme="dark"] .comment-form input[type="submit"],
+html[data-scheme="dark"] .post-password-form input[type="submit"] {
+	color: #0f172a;
+}
+
+@media (prefers-color-scheme: dark) {
+	html:not([data-scheme="light"]) .alo-blog-menu-toggle,
+	html:not([data-scheme="light"]) .alo-blog-search-form button,
+	html:not([data-scheme="light"]) .alo-blog-sticky-label,
+	html:not([data-scheme="light"]) .page-numbers.current,
+	html:not([data-scheme="light"]) a.wp-block-query-pagination-previous:hover,
+	html:not([data-scheme="light"]) a.wp-block-query-pagination-next:hover,
+	html:not([data-scheme="light"]) .comment-form input[type="submit"],
+	html:not([data-scheme="light"]) .post-password-form input[type="submit"] {
+		color: #0f172a;
+	}
+}
+
+/* Print: content only, black on white, link URLs shown. */
+@media print {
+	.alo-blog-header .alo-blog-nav,
+	.alo-blog-menu-toggle,
+	.alo-blog-scheme-toggle,
+	.alo-blog-sidebar,
+	.alo-blog-footer-widgets,
+	.alo-blog-progress,
+	.comment-respond,
+	.post-navigation {
+		display: none !important;
+	}
+
+	body {
+		background: #fff;
+		color: #000;
+	}
+
+	.alo-blog-entry-content a[href^="http"]::after {
+		content: " (" attr(href) ")";
+		font-size: 12px;
+	}
+}
+

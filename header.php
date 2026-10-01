@@ -56,6 +56,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 			?>
 		</nav>
 		<?php } ?>
+		<?php if ( 'auto' === get_theme_mod( 'aloblog_color_scheme', 'auto' ) ) { ?>
+		<button class="alo-blog-scheme-toggle" aria-pressed="false" aria-label="<?php esc_attr_e( 'Toggle color scheme', 'alo-blog' ); ?>"><span class="alo-blog-scheme-dark-label" aria-hidden="true"><?php esc_html_e( 'Dark', 'alo-blog' ); ?></span><span class="alo-blog-scheme-light-label" aria-hidden="true"><?php esc_html_e( 'Light', 'alo-blog' ); ?></span></button>
+		<?php } ?>
 	</div>
 </header>
 <main id="main" class="alo-blog-container">

@@ -359,3 +359,23 @@ msgstr ""
 #: page-full-width.php
 msgid "Full Width"
 msgstr ""
+
+#: inc/customizer.php
+msgid "Color scheme"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Auto (follow system)"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Light"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Dark"
+msgstr ""
+
+#: header.php
+msgid "Toggle color scheme"
+msgstr ""

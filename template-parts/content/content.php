@@ -24,8 +24,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<p class="alo-blog-sticky-label"><?php esc_html_e( 'Featured', 'alo-blog' ); ?></p>
 	<?php } ?>
 	<?php
-	$aloblog_card_title = get_the_title() ? wp_strip_all_tags( get_the_title() ) : __( '(No title)', 'alo-blog' );
-	if ( get_the_title() ) {
+	$aloblog_raw_title  = get_the_title();
+	$aloblog_card_title = $aloblog_raw_title ? wp_strip_all_tags( $aloblog_raw_title ) : __( '(No title)', 'alo-blog' );
+	if ( $aloblog_raw_title ) {
 		?>
 	<h2><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h2>
 		<?php

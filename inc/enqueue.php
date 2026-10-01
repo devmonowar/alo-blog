@@ -16,10 +16,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Enqueues front-end styles and scripts.
  */
 function aloblog_scripts() {
-	$version = ALOBLOG_VERSION;
+	// Single source of truth for asset versions: the stylesheet header.
+	$version = wp_get_theme()->get( 'Version' );
 
-	wp_enqueue_style( 'aloblog-style', get_stylesheet_uri(), array(), $version );
-	wp_enqueue_style( 'aloblog-main', get_template_directory_uri() . '/assets/css/main.css', array( 'aloblog-style' ), $version );
+	wp_enqueue_style( 'aloblog-main', get_template_directory_uri() . '/assets/css/main.css', array(), $version );
 	wp_enqueue_script( 'aloblog-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), $version, true );
 
 	if ( is_single() ) {

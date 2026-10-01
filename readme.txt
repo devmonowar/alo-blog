@@ -34,6 +34,9 @@ Post in the WordPress.org support forum for Alo Blog, or open an issue at https:
 
 == Changelog ==
 
+= 1.0.4 =
+* theme.json v2 with WP 6.4 schema (matches Requires 6.4), wide-alignment support with front-end styles, single version source via stylesheet header, per-column footer widget guards with adaptive 1-3 column layout, neutral subscribe-pattern copy, comment-only stylesheet no longer enqueued separately, shared focus-visible for form controls, simplified card-title logic, plus repo hygiene (GPL LICENSE, PHPCS + CI).
+
 = 1.0.3 =
 * Restyled block patterns with theme colors and spacing, refreshed screenshot.
 

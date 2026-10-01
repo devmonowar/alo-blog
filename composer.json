@@ -1,0 +1,17 @@
+{
+	"name": "devmonowar/alo-blog",
+	"description": "Alo Blog — lightweight personal blog theme.",
+	"license": "GPL-2.0-or-later",
+	"require-dev": {
+		"wp-coding-standards/wpcs": "^3.0"
+	},
+	"scripts": {
+		"lint": "phpcs --standard=WordPress-Extra --extensions=php --ignore=*/vendor/* .",
+		"lint-fix": "phpcbf --standard=WordPress-Extra --extensions=php --ignore=*/vendor/* ."
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}

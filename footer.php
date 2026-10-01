@@ -14,13 +14,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 <footer class="alo-blog-footer">
 	<div class="alo-blog-container">
 		<?php
-		if ( is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-2' ) || is_active_sidebar( 'footer-3' ) ) {
+		$aloblog_active_columns = 0;
+		for ( $i = 1; $i <= 3; $i++ ) {
+			if ( is_active_sidebar( 'footer-' . $i ) ) {
+				$aloblog_active_columns++;
+			}
+		}
+		if ( $aloblog_active_columns > 0 ) {
 			?>
-			<div class="alo-blog-footer-widgets">
+			<div class="alo-blog-footer-widgets alo-blog-footer-widgets--<?php echo esc_attr( $aloblog_active_columns ); ?>">
 				<?php for ( $i = 1; $i <= 3; $i++ ) { ?>
+					<?php if ( is_active_sidebar( 'footer-' . $i ) ) { ?>
 					<div class="alo-blog-footer-widget">
 						<?php dynamic_sidebar( 'footer-' . $i ); ?>
 					</div>
+					<?php } ?>
 				<?php } ?>
 			</div>
 			<?php

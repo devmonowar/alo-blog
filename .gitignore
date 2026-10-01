@@ -1,0 +1,18 @@
+# Dependencies — installed, never committed.
+# composer.lock IS committed, deliberately: it is what makes a build reproducible.
+/vendor/
+node_modules/
+
+# Build output — the distributable is generated, not stored.
+*.zip
+
+# Tooling caches
+.phpcs-cache
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.log

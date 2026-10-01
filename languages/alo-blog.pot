@@ -182,7 +182,7 @@ msgid "Follow along"
 msgstr ""
 
 #: patterns/cta-subscribe-note.php:22
-msgid "New essays arrive by email. No spam, unsubscribe anytime."
+msgid "Fresh essays, no noise. Come back anytime."
 msgstr ""
 
 #: patterns/hero-intro.php

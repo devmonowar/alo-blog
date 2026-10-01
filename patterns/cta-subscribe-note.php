@@ -19,6 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center"} -->
-<p class="has-text-align-center"><?php echo esc_html__( 'New essays arrive by email. No spam, unsubscribe anytime.', 'alo-blog' ); ?></p>
+<p class="has-text-align-center"><?php echo esc_html__( 'Fresh essays, no noise. Come back anytime.', 'alo-blog' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->

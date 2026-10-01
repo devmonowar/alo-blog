@@ -61,4 +61,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php } ?>
 	</div>
 </header>
-<main id="main" class="alo-blog-container">
+<main id="main" class="alo-blog-container" tabindex="-1">

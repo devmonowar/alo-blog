@@ -42,7 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		printf(
 			/* translators: 1: post date, 2: author link. */
 			esc_html__( 'Posted on %1$s by %2$s', 'alo-blog' ),
-			'<a href="' . esc_url( get_day_link( get_the_time( 'Y' ), get_the_time( 'm' ), get_the_time( 'd' ) ) ) . '">' . esc_html( get_the_date() ) . '</a>',
+			'<a href="' . esc_url( get_day_link( get_the_time( 'Y' ), get_the_time( 'm' ), get_the_time( 'd' ) ) ) . '"><time datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date() ) . '</time></a>',
 			'<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a>'
 		);
 		?>

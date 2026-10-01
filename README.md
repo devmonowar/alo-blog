@@ -30,6 +30,7 @@ Requires WordPress 6.4+ and PHP 7.4+.
 * Need a page without sidebar? Set its Template to “Full Width”.
 * New site? The Customizer offers starter content (Welcome, About and Writing pages, Primary menu) — a starting point, not a demo to keep.
 * Related posts appear automatically under single posts that share a category or tag.
+* Color scheme (Appearance → Customize → Theme Options → Auto/Light/Dark) follows the system by default; the header toggle appears only on Auto and remembers its choice per browser.
 
 ## Support
 

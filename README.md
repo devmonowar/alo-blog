@@ -11,6 +11,7 @@ A lightweight personal blog theme for writers. Fast, readable, keyboard and scre
 
 * From WordPress.org: https://wordpress.org/themes/alo-blog/ (Appearance → Themes → Add New, search “Alo Blog”)
 * From source: download this repo as ZIP, upload via Appearance → Themes → Add New → Upload.
+* Try it now (no install): https://playground.wordpress.net/?theme=alo-blog — live demo in your browser.
 
 Requires WordPress 6.4+ and PHP 7.4+.
 

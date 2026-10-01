@@ -17,6 +17,7 @@
 	--alo-blog-border: #e5e7eb;
 	--alo-blog-footer-bg: #111827;
 	--alo-blog-footer-text: #f9fafb;
+	--alo-blog-accent-bg: #eef2ff;
 	--alo-blog-content-width: 720px;
 	--alo-blog-container-width: 1200px;
 }
@@ -75,16 +76,6 @@ h6,
 	max-width: var(--alo-blog-container-width);
 	margin: 0 auto;
 	padding: 0 20px;
-}
-
-/* Wide and full alignment (see add_theme_support 'align-wide'). */
-.alignwide {
-	max-width: var(--alo-blog-container-width);
-	margin-left: auto;
-	margin-right: auto;
-}
-.alignfull {
-	max-width: none;
 }
 
 #main.alo-blog-container {

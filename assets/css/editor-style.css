@@ -13,6 +13,12 @@ body {
 	background: #ffffff;
 }
 
+/* Mirror of the front-end tokens used below (main.css :root). */
+:root {
+	--alo-blog-primary: #1d4ed8;
+	--alo-blog-accent-bg: #eef2ff;
+}
+
 a {
 	color: #1d4ed8;
 }
@@ -33,8 +39,8 @@ blockquote {
 }
 
 .wp-block-quote.is-style-accent {
-	border-left-color: #1d4ed8;
-	background: #eef2ff;
+	border-left-color: var(--alo-blog-primary);
+	background: var(--alo-blog-accent-bg);
 	padding: 16px 20px;
 	border-radius: 0 8px 8px 0;
 }

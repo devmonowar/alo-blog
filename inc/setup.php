@@ -42,7 +42,6 @@ function aloblog_setup() {
 	);
 	add_theme_support( 'customize-selective-refresh-widgets' );
 	add_theme_support( 'responsive-embeds' );
-	add_theme_support( 'align-wide' );
 	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'editor-styles' );
 
@@ -109,7 +108,7 @@ function aloblog_register_block_styles() {
 		array(
 			'name'         => 'accent',
 			'label'        => __( 'Accent', 'alo-blog' ),
-			'inline_style' => '.wp-block-quote.is-style-accent{border-left-color:var(--alo-blog-primary);background:#eef2ff;padding:16px 20px;border-radius:0 8px 8px 0;}',
+			'inline_style' => '.wp-block-quote.is-style-accent{border-left-color:var(--alo-blog-primary);background:var(--alo-blog-accent-bg);padding:16px 20px;border-radius:0 8px 8px 0;}',
 		)
 	);
 }

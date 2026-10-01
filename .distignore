@@ -3,6 +3,7 @@
 .github/
 .gitattributes
 .gitignore
+.distignore
 CONTRIBUTING.md
 phpcs.xml.dist
 composer.json

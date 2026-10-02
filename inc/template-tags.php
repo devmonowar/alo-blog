@@ -56,7 +56,7 @@ function aloblog_related_ids( $post_id = 0, $number = 3 ) {
 	if ( ! empty( $cats ) && ! is_wp_error( $cats ) ) {
 		$q     = new WP_Query(
 			array(
-				'cat'                 => $cats,
+				'category__in'        => $cats,
 				'posts_per_page'      => $number,
 				'post__not_in'        => array( $post_id ),
 				'ignore_sticky_posts' => true,

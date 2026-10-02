@@ -9,6 +9,6 @@ phpcs.xml.dist
 composer.json
 composer.lock
 /vendor/
-/vendor/
+languages/*.po
 *.log
 .DS_Store

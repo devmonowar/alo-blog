@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Alo Blog 1.0.0\n"
+"Project-Id-Version: Alo Blog 1.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/alo-blog\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"

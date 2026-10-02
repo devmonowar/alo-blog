@@ -322,6 +322,14 @@ msgstr ""
 msgid "Show reading time on single posts"
 msgstr ""
 
+#: inc/customizer.php
+msgid "Show reading progress bar on single posts"
+msgstr ""
+
+#: inc/customizer.php
+msgid "Show related posts on single posts"
+msgstr ""
+
 #: inc/template-tags.php
 msgid "%d minute read"
 msgid_plural "%d minutes read"
@@ -330,6 +338,11 @@ msgstr[1] ""
 
 #: single.php
 msgid "Keep reading"
+msgstr ""
+
+#: template-parts/content/content.php
+msgctxt "card date format"
+msgid "M j, Y"
 msgstr ""
 
 #: inc/setup.php

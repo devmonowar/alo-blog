@@ -126,6 +126,40 @@ function aloblog_customize_register( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_setting(
+		'aloblog_show_progress_bar',
+		array(
+			'default'           => true,
+			'type'              => 'theme_mod',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'aloblog_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control(
+		'aloblog_show_progress_bar',
+		array(
+			'label'   => esc_html__( 'Show reading progress bar on single posts', 'alo-blog' ),
+			'section' => 'aloblog_options',
+			'type'    => 'checkbox',
+		)
+	);
+	$wp_customize->add_setting(
+		'aloblog_show_related_posts',
+		array(
+			'default'           => true,
+			'type'              => 'theme_mod',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'aloblog_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control(
+		'aloblog_show_related_posts',
+		array(
+			'label'   => esc_html__( 'Show related posts on single posts', 'alo-blog' ),
+			'section' => 'aloblog_options',
+			'type'    => 'checkbox',
+		)
+	);
+	$wp_customize->add_setting(
 		'aloblog_post_layout',
 		array(
 			'default'           => 'list',

@@ -12,7 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header();
 ?>
+<?php if ( get_theme_mod( 'aloblog_show_progress_bar', true ) ) { ?>
 <div class="alo-blog-progress" aria-hidden="true"><span class="alo-blog-progress-bar"></span></div>
+<?php } ?>
 <div class="alo-blog-layout">
 	<div class="alo-blog-content">
 		<?php
@@ -79,7 +81,7 @@ get_header();
 			</div>
 			<?php } ?>
 			<?php
-			$aloblog_related = aloblog_related_ids( get_the_ID(), 3 );
+			$aloblog_related = get_theme_mod( 'aloblog_show_related_posts', true ) ? aloblog_related_ids( get_the_ID(), 3 ) : array();
 			if ( ! empty( $aloblog_related ) ) {
 				?>
 			<section class="alo-blog-related" aria-labelledby="alo-blog-related-heading">

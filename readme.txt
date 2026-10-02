@@ -16,7 +16,7 @@ Alo Blog is a lightweight personal writing theme by Monowar Hossain. Single-colu
 * Reader-first typography: 720px measure, 17px system-font stack, generous line-height.
 * Writer-friendly details: sticky Featured posts, author box with avatar, tag pills, reading progress bar.
 * Block-ready: editor styles that match the front end, accent quote style, three starter patterns.
-* Privacy-respecting: zero external requests, zero tracking, zero bundled scripts.
+* Privacy-respecting: zero external requests, zero tracking, no third-party scripts.
 
 == Frequently Asked Questions ==
 

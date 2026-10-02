@@ -7,9 +7,14 @@
 		return;
 	}
 	function current() {
-		return document.documentElement.dataset.scheme === 'dark' ? 'dark' : 'light';
+		var s = document.documentElement.dataset.scheme;
+		if ( s === 'dark' || s === 'light' ) {
+			return s;
+		}
+		return window.matchMedia && matchMedia( '(prefers-color-scheme: dark)' ).matches ? 'dark' : 'light';
 	}
 	function paint() {
+		btn.removeAttribute( 'hidden' );
 		btn.setAttribute( 'aria-pressed', current() === 'dark' ? 'true' : 'false' );
 	}
 	btn.addEventListener( 'click', function () {

@@ -24,9 +24,15 @@ function aloblog_reading_time( $post_id = 0 ) {
 	if ( ! $post ) {
 		return 1;
 	}
-	$words = preg_split( '/\s+/u', wp_strip_all_tags( $post->post_content ), -1, PREG_SPLIT_NO_EMPTY );
+	$text  = strip_shortcodes( $post->post_content );
+	$words = preg_split( '/\s+/u', wp_strip_all_tags( $text ), -1, PREG_SPLIT_NO_EMPTY );
 	$count = is_array( $words ) ? count( $words ) : 0;
-	return max( 1, (int) ceil( $count / 200 ) );
+	// Words per minute a reader sustains; sites can tune it.
+	$wpm = (int) apply_filters( 'aloblog_reading_wpm', 200 );
+	if ( $wpm < 1 ) {
+		$wpm = 200;
+	}
+	return max( 1, (int) ceil( $count / $wpm ) );
 }
 
 /**

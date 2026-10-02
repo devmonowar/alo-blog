@@ -1276,6 +1276,7 @@ body.admin-bar .alo-blog-progress {
 
 /* Dark color scheme: explicit choice wins, otherwise follow the OS. */
 html[data-scheme="dark"] {
+	color-scheme: dark;
 	--alo-blog-bg: #0f172a;
 	--alo-blog-text: #e5e9f0;
 	--alo-blog-muted: #9aa5b5;
@@ -1285,10 +1286,16 @@ html[data-scheme="dark"] {
 	--alo-blog-primary: #93c5fd;
 	--alo-blog-accent-bg: #16295c;
 	--alo-blog-table-head-bg: #1c2942;
+	/* Keep global (block) styles on the same scheme, regardless of load order. */
+	--wp--preset--color--background: #0f172a;
+	--wp--preset--color--text: #e5e9f0;
+	--wp--preset--color--primary: #93c5fd;
+	--wp--preset--color--muted: #9aa5b5;
 }
 
 @media (prefers-color-scheme: dark) {
 	html:not([data-scheme="light"]) {
+		color-scheme: dark;
 		--alo-blog-bg: #0f172a;
 		--alo-blog-text: #e5e9f0;
 		--alo-blog-muted: #9aa5b5;
@@ -1298,6 +1305,10 @@ html[data-scheme="dark"] {
 		--alo-blog-primary: #93c5fd;
 		--alo-blog-accent-bg: #16295c;
 		--alo-blog-table-head-bg: #1c2942;
+		--wp--preset--color--background: #0f172a;
+		--wp--preset--color--text: #e5e9f0;
+		--wp--preset--color--primary: #93c5fd;
+		--wp--preset--color--muted: #9aa5b5;
 	}
 }
 

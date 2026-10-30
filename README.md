@@ -20,7 +20,7 @@ Requires WordPress 6.4+ and PHP 7.4+.
 * Accessibility-first: skip link, visible focus, keyboard-operable menus with focus trap, screen-reader labels.
 * Reader-first typography: 720px measure, system-font stack, generous line-height.
 * Writer-friendly details: sticky Featured posts, author box, tag pills, reading progress bar, continue-reading links that name the post.
-* Block-ready: matching editor styles, accent quote style, three starter patterns.
+* Block-ready: matching editor styles, accent quote style, six starter patterns.
 * Translation-ready with RTL stylesheet, threaded comments, right sidebar + footer widgets.
 * Privacy-respecting: zero external requests, zero tracking, no page builder, no slider, no upsells.
 

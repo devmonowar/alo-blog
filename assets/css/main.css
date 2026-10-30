@@ -797,6 +797,13 @@ img {
 	padding-left: 24px;
 }
 
+/* Core blocks built on lists keep their own spacing and no bullets. */
+.alo-blog-entry-content .wp-block-social-links,
+.alo-blog-entry-content .wp-block-post-template {
+	padding-left: 0;
+	list-style: none;
+}
+
 .alo-blog-entry-content blockquote {
 	margin: 0 0 16px;
 	padding: 12px 20px;
@@ -1288,9 +1295,10 @@ html[data-scheme="dark"] {
 	--alo-blog-table-head-bg: #1c2942;
 	/* Keep global (block) styles on the same scheme, regardless of load order. */
 	--wp--preset--color--background: #0f172a;
-	--wp--preset--color--text: #e5e9f0;
+	--wp--preset--color--foreground: #e5e9f0;
 	--wp--preset--color--primary: #93c5fd;
 	--wp--preset--color--muted: #9aa5b5;
+	--wp--preset--color--surface: #16295c;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1306,9 +1314,10 @@ html[data-scheme="dark"] {
 		--alo-blog-accent-bg: #16295c;
 		--alo-blog-table-head-bg: #1c2942;
 		--wp--preset--color--background: #0f172a;
-		--wp--preset--color--text: #e5e9f0;
+		--wp--preset--color--foreground: #e5e9f0;
 		--wp--preset--color--primary: #93c5fd;
 		--wp--preset--color--muted: #9aa5b5;
+		--wp--preset--color--surface: #16295c;
 	}
 }
 

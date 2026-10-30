@@ -15,7 +15,7 @@ Alo Blog is a lightweight personal writing theme by Monowar Hossain. Single-colu
 * Accessibility-first: skip link, visible focus, keyboard-operable menus, screen-reader labels.
 * Reader-first typography: 720px measure, 17px system-font stack, generous line-height.
 * Writer-friendly details: sticky Featured posts, author box with avatar, tag pills, reading progress bar.
-* Block-ready: editor styles that match the front end, accent quote style, three starter patterns.
+* Block-ready: editor styles that match the front end, accent quote style, six starter patterns.
 * Privacy-respecting: zero external requests, zero tracking, no third-party scripts.
 
 == Frequently Asked Questions ==
@@ -35,7 +35,7 @@ Post in the WordPress.org support forum for Alo Blog, or open an issue at https:
 == Changelog ==
 
 = 1.1.0 =
-* Dark mode (Auto/Light/Dark Customizer option, system-following default, header toggle, print styles), two-column post grid layout with Post Grid pattern, reading time with toggle, related posts, starter content, Full Width page template, Social Links menu location, Bengali translation skeleton, semantic HTML (navigation and comments outside article, time elements, linked author names), setup guide docs.
+* Dark mode (Auto/Light/Dark Customizer option, system-following default, header toggle, print styles), two-column post grid layout, six full-width block patterns (Hero, Featured Posts, Latest Posts, Follow Along, About the Author, Quote) with 1200px preview width, surface color and spacing scale in theme.json, reading time with toggle, related posts, starter content, Full Width page template, Social Links menu location, Bengali translation skeleton, semantic HTML (navigation and comments outside article, time elements, linked author names), setup guide docs.
 
 = 1.0.4 =
 * theme.json v2 with WP 6.4 schema (matches Requires 6.4), single version source via stylesheet header, per-column footer widget guards with adaptive 1-3 column layout, neutral subscribe-pattern copy, comment-only stylesheet no longer enqueued separately, shared focus-visible for form controls, simplified card-title logic, accent background token, plus repo hygiene (GPL LICENSE, PHPCS + CI).

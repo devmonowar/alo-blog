@@ -14,8 +14,8 @@
 					"color": "#FFFFFF"
 				},
 				{
-					"slug": "text",
-					"name": "Text",
+					"slug": "foreground",
+					"name": "Foreground",
 					"color": "#1A1A1A"
 				},
 				{
@@ -27,6 +27,11 @@
 					"slug": "muted",
 					"name": "Muted",
 					"color": "#5F6368"
+				},
+				{
+					"slug": "surface",
+					"name": "Surface",
+					"color": "#EEF2FF"
 				},
 				{
 					"slug": "footer-background",
@@ -56,17 +61,59 @@
 					"slug": "x-large",
 					"name": "Extra Large",
 					"size": "32px"
+				},
+				{
+					"slug": "xx-large",
+					"name": "Extra Extra Large",
+					"size": "clamp(2.25rem, 5vw, 3rem)"
 				}
 			]
 		},
 		"spacing": {
-			"units": [ "px", "em", "rem", "%" ]
+			"units": [ "px", "em", "rem", "%" ],
+			"spacingSizes": [
+				{
+					"slug": "20",
+					"name": "2X-Small",
+					"size": "0.5rem"
+				},
+				{
+					"slug": "30",
+					"name": "X-Small",
+					"size": "1rem"
+				},
+				{
+					"slug": "40",
+					"name": "Small",
+					"size": "1.5rem"
+				},
+				{
+					"slug": "50",
+					"name": "Medium",
+					"size": "2rem"
+				},
+				{
+					"slug": "60",
+					"name": "Large",
+					"size": "3rem"
+				},
+				{
+					"slug": "70",
+					"name": "X-Large",
+					"size": "4.5rem"
+				},
+				{
+					"slug": "80",
+					"name": "2X-Large",
+					"size": "6rem"
+				}
+			]
 		}
 	},
 	"styles": {
  "color": {
   "background": "var:preset|color|background",
-  "text": "var:preset|color|text"
+  "text": "var:preset|color|foreground"
  },
 		"typography": {
 			"fontSize": "17px",

@@ -148,12 +148,16 @@ function aloblog_widgets_init() {
 add_action( 'widgets_init', 'aloblog_widgets_init' );
 
 /**
- * Registers the theme pattern category.
+ * Registers the theme pattern categories.
  */
 function aloblog_pattern_categories() {
 	register_block_pattern_category(
 		'alo-blog-intro',
 		array( 'label' => esc_html__( 'Alo Blog', 'alo-blog' ) )
+	);
+	register_block_pattern_category(
+		'alo-blog-posts',
+		array( 'label' => esc_html__( 'Alo Blog Posts', 'alo-blog' ) )
 	);
 }
 add_action( 'init', 'aloblog_pattern_categories' );

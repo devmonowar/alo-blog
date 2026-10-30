@@ -2,31 +2,27 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Alo Blog 1.1.0\n"
+"Project-Id-Version: Alo Blog 1.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/alo-blog\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-13T19:06:04+02:00\n"
+"POT-Creation-Date: 2026-10-30T13:32:50+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.12.0\n"
+"X-Generator: Alo Blog tokenizer script (equivalent to wp i18n make-pot)\n"
 "X-Domain: alo-blog\n"
 
 #. Theme Name of the theme
 #: style.css
-#: inc/setup.php:97
+#: inc/setup.php:156
 msgid "Alo Blog"
-msgstr ""
-
-#: inc/setup.php
-msgid "Accent"
 msgstr ""
 
 #. Description of the theme
 #: style.css
-msgid "Lightweight personal blog theme for writers. Fast, readable, keyboard and screen-reader friendly."
+msgid "Lightweight personal blog theme for writers. Fast, readable, keyboard and screen-reader friendly — with RTL and Bangla type support, no tracking, no upsells."
 msgstr ""
 
 #. Author of the theme
@@ -74,7 +70,7 @@ msgid "Comments are closed."
 msgstr ""
 
 #. translators: 1: current year, 2: site name.
-#: footer.php:48
+#: footer.php:70
 #, php-format
 msgid "© %1$s %2$s. All rights reserved."
 msgstr ""
@@ -83,21 +79,81 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: index.php
-msgid "Latest Posts"
-msgstr ""
-
-#: single.php
-msgid "Tags:"
-msgstr ""
-
-#: header.php:44
+#: header.php:45
 #: inc/setup.php:52
+#: inc/setup.php:85
 msgid "Primary Menu"
 msgstr ""
 
-#: header.php:48
+#: header.php:46
 msgid "Menu"
+msgstr ""
+
+#: header.php:60
+msgid "Toggle color scheme"
+msgstr ""
+
+#: index.php:17
+msgid "Latest Posts"
+msgstr ""
+
+#: page-full-width.php
+msgid "Full Width"
+msgstr ""
+
+#: page-full-width.php:29
+#: page.php:27
+#: single.php:29
+#: single.php:94
+#: template-parts/content/content.php:28
+#: template-parts/content/content.php:35
+msgid "(No title)"
+msgstr ""
+
+#: page-full-width.php:46
+#: page.php:44
+#: single.php:60
+msgid "Pages:"
+msgstr ""
+
+#. translators: %s: search query.
+#: search.php:21
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:15
+#: searchform.php:17
+msgid "Search"
+msgstr ""
+
+#: searchform.php:16
+msgid "Search…"
+msgstr ""
+
+#. translators: 1: post date, 2: author link.
+#: single.php:36
+#: template-parts/content/content.php:44
+#, php-format
+msgid "Posted on %1$s by %2$s"
+msgstr ""
+
+#: single.php:66
+msgid "Tags:"
+msgstr ""
+
+#: single.php:88
+msgid "Keep reading"
+msgstr ""
+
+#. translators: %s: neighboring post title.
+#: single.php:108
+msgid "Previous:"
+msgstr ""
+
+#. translators: %s: neighboring post title.
+#: single.php:110
+msgid "Next:"
 msgstr ""
 
 #: inc/customizer.php:24
@@ -132,75 +188,230 @@ msgstr ""
 msgid "Show author box on single posts"
 msgstr ""
 
+#: inc/customizer.php:123
+msgid "Show reading time on single posts"
+msgstr ""
+
+#: inc/customizer.php:140
+msgid "Show reading progress bar on single posts"
+msgstr ""
+
+#: inc/customizer.php:157
+msgid "Show related posts on single posts"
+msgstr ""
+
+#: inc/customizer.php:174
+msgid "Post list layout"
+msgstr ""
+
+#: inc/customizer.php:178
+msgid "Single-column list"
+msgstr ""
+
+#: inc/customizer.php:179
+msgid "Two-column grid"
+msgstr ""
+
+#: inc/customizer.php:195
+msgid "Color scheme"
+msgstr ""
+
+#: inc/customizer.php:199
+msgid "Auto (follow system)"
+msgstr ""
+
+#: inc/customizer.php:200
+msgid "Light"
+msgstr ""
+
+#: inc/customizer.php:201
+msgid "Dark"
+msgstr ""
+
 #: inc/setup.php:53
 msgid "Footer Menu"
 msgstr ""
 
-#: inc/setup.php
-msgid "Expand submenu"
+#: inc/setup.php:54
+msgid "Social Links"
 msgstr ""
 
-#: inc/setup.php
-msgid "Collapse submenu"
+#: inc/setup.php:64
+msgid "Welcome"
 msgstr ""
 
 #: inc/setup.php:65
+msgid "This is a starter page. Replace it with your own words, then set your front page under Settings, Reading."
+msgstr ""
+
+#: inc/setup.php:69
+msgid "About"
+msgstr ""
+
+#: inc/setup.php:70
+msgid "Write a few honest lines about who you are and why you write."
+msgstr ""
+
+#: inc/setup.php:74
+msgid "Writing"
+msgstr ""
+
+#: inc/setup.php:75
+msgid "Your posts will appear here."
+msgstr ""
+
+#: inc/setup.php:124
 msgid "Sidebar"
 msgstr ""
 
-#: inc/setup.php:67
+#: inc/setup.php:126
 msgid "Appears on posts and pages with sidebar layout."
 msgstr ""
 
 #. translators: %d: footer widget area number.
-#: inc/setup.php:78
+#: inc/setup.php:137
 #, php-format
 msgid "Footer %d"
 msgstr ""
 
-#: inc/setup.php:80
+#: inc/setup.php:139
 msgid "Appears in the footer."
 msgstr ""
 
-#: page.php:34
-#: single.php:42
-msgid "Pages:"
+#: inc/setup.php:160
+msgid "Alo Blog Posts"
 msgstr ""
 
-#: patterns/cta-subscribe-note.php
+#: inc/setup.php:173
+msgid "Accent"
+msgstr ""
+
+#: inc/setup.php:201
+msgid "Expand submenu"
+msgstr ""
+
+#: inc/setup.php:202
+msgid "Collapse submenu"
+msgstr ""
+
+#. translators: %d: estimated reading time in minutes.
+#: inc/template-tags.php:45
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] ""
+msgstr[1] ""
+
+#: patterns/about-author.php
 msgctxt "Pattern title"
-msgid "Subscribe Note"
+msgid "About the Author"
 msgstr ""
 
-#: patterns/cta-subscribe-note.php
+#: patterns/about-author.php
 msgctxt "Pattern description"
-msgid "Text-only call-to-action note without any form."
+msgid "Author introduction with a round placeholder avatar, name, short bio and social links."
 msgstr ""
 
-#: patterns/cta-subscribe-note.php:19
+#: patterns/about-author.php:23
+msgctxt "Initial shown in the author placeholder avatar"
+msgid "A"
+msgstr ""
+
+#: patterns/about-author.php:31
+msgid "About the author"
+msgstr ""
+
+#: patterns/about-author.php:35
+msgid "Hi, I’m Alex Morgan"
+msgstr ""
+
+#: patterns/about-author.php:39
+msgid "I write about everyday craft, slow technology and the small ideas worth sharing. New essays arrive whenever they are ready, never on a schedule."
+msgstr ""
+
+#: patterns/featured-posts.php
+msgctxt "Pattern title"
+msgid "Featured Posts"
+msgstr ""
+
+#: patterns/featured-posts.php
+msgctxt "Pattern description"
+msgid "Three-column grid of recent posts shown as soft cards with image, title, date and excerpt."
+msgstr ""
+
+#: patterns/featured-posts.php:19
+msgid "Featured stories"
+msgstr ""
+
+#: patterns/featured-posts.php:23
+msgid "Hand-picked reading from the latest posts."
+msgstr ""
+
+#: patterns/featured-posts.php:41
+#: patterns/latest-posts.php:43
+msgid "No posts yet. Check back soon."
+msgstr ""
+
+#: patterns/follow-along.php
+msgctxt "Pattern title"
+msgid "Follow Along"
+msgstr ""
+
+#: patterns/follow-along.php
+msgctxt "Pattern description"
+msgid "Centered call-to-action on a soft background with subscribe and browse buttons. No form or plugin required."
+msgstr ""
+
+#: patterns/follow-along.php:19
 msgid "Follow along"
 msgstr ""
 
-#: patterns/cta-subscribe-note.php:22
-msgid "Fresh essays, no noise. Come back anytime."
+#: patterns/follow-along.php:23
+msgid "Fresh essays, no noise. Subscribe by feed and come back anytime."
 msgstr ""
 
-#: patterns/hero-intro.php
+#: patterns/follow-along.php:28
+msgid "Subscribe"
+msgstr ""
+
+#: patterns/follow-along.php:32
+msgid "Browse posts"
+msgstr ""
+
+#: patterns/hero.php
 msgctxt "Pattern title"
-msgid "Hero Intro"
+msgid "Hero"
 msgstr ""
 
-#: patterns/hero-intro.php
+#: patterns/hero.php
 msgctxt "Pattern description"
-msgid "Simple intro heading with short text for the top of a page."
+msgid "Full-width hero with a large heading, short subtitle and a call-to-action button."
 msgstr ""
 
-#: patterns/hero-intro.php:19
+#: patterns/hero.php:19
 msgid "Write clearly, publish simply."
 msgstr ""
 
-#: patterns/hero-intro.php:22
+#: patterns/hero.php:23
 msgid "A fast, readable home for your personal writing. No clutter, just words."
+msgstr ""
+
+#: patterns/hero.php:28
+msgid "Start reading"
+msgstr ""
+
+#: patterns/latest-posts.php
+msgctxt "Pattern title"
+msgid "Latest Posts"
+msgstr ""
+
+#: patterns/latest-posts.php
+msgctxt "Pattern description"
+msgid "Full-width list of the five latest posts with date, title, excerpt and a divider between items."
+msgstr ""
+
+#: patterns/latest-posts.php:19
+msgid "Latest posts"
 msgstr ""
 
 #: patterns/quote.php
@@ -210,58 +421,15 @@ msgstr ""
 
 #: patterns/quote.php
 msgctxt "Pattern description"
-msgid "Simple pull quote for articles."
+msgid "Large pull quote with the accent style, centered in a full-width section."
 msgstr ""
 
-#: patterns/quote.php:19
+#: patterns/quote.php:20
 msgid "Good writing is clear thinking made visible."
 msgstr ""
 
-#: patterns/quote.php:19
+#: patterns/quote.php:21
 msgid "A writer’s notebook"
-msgstr ""
-
-#. translators: %s: search query.
-#: search.php:20
-#, php-format
-msgid "Search Results for: %s"
-msgstr ""
-
-#: searchform.php:14
-#: searchform.php:16
-msgid "Search"
-msgstr ""
-
-#: searchform.php:15
-msgid "Search…"
-msgstr ""
-
-#. translators: 1: post date, 2: author name.
-#: single.php:26
-#: template-parts/content/content.php:28
-#, php-format
-msgid "Posted on %1$s by %2$s"
-msgstr ""
-
-#: single.php
-msgid "Previous:"
-msgstr ""
-
-#: single.php
-msgid "Next:"
-msgstr ""
-
-#: template-parts/content/content.php
-msgid "Featured"
-msgstr ""
-
-#: template-parts/content/content.php
-msgid "Continue reading"
-msgstr ""
-
-#: single.php
-#: template-parts/content/content.php
-msgid "(No title)"
 msgstr ""
 
 #: template-parts/content/content-none.php:14
@@ -272,6 +440,19 @@ msgstr ""
 msgid "Try a different search:"
 msgstr ""
 
+#: template-parts/content/content.php:24
+msgid "Featured"
+msgstr ""
+
+#: template-parts/content/content.php:45
+msgctxt "card date format"
+msgid "M j, Y"
+msgstr ""
+
+#: template-parts/content/content.php:54
+msgid "Continue reading"
+msgstr ""
+
 #: theme.json
 msgctxt "Color name"
 msgid "Background"
@@ -279,7 +460,7 @@ msgstr ""
 
 #: theme.json
 msgctxt "Color name"
-msgid "Text"
+msgid "Foreground"
 msgstr ""
 
 #: theme.json
@@ -290,6 +471,11 @@ msgstr ""
 #: theme.json
 msgctxt "Color name"
 msgid "Muted"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Surface"
 msgstr ""
 
 #: theme.json
@@ -317,99 +503,42 @@ msgctxt "Font size name"
 msgid "Extra Large"
 msgstr ""
 
-#: inc/customizer.php
-msgid "Show reading time on single posts"
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra Extra Large"
 msgstr ""
 
-#: inc/customizer.php
-msgid "Show reading progress bar on single posts"
+#: theme.json
+msgctxt "Space size name"
+msgid "2X-Small"
 msgstr ""
 
-#: inc/customizer.php
-msgid "Show related posts on single posts"
+#: theme.json
+msgctxt "Space size name"
+msgid "X-Small"
 msgstr ""
 
-#: inc/template-tags.php
-msgid "%d minute read"
-msgid_plural "%d minutes read"
-msgstr[0] ""
-msgstr[1] ""
-
-#: single.php
-msgid "Keep reading"
+#: theme.json
+msgctxt "Space size name"
+msgid "Small"
 msgstr ""
 
-#: template-parts/content/content.php
-msgctxt "card date format"
-msgid "M j, Y"
+#: theme.json
+msgctxt "Space size name"
+msgid "Medium"
 msgstr ""
 
-#: inc/setup.php
-msgid "Welcome"
+#: theme.json
+msgctxt "Space size name"
+msgid "Large"
 msgstr ""
 
-#: inc/setup.php
-msgid "This is a starter page. Replace it with your own words, then set your front page under Settings, Reading."
+#: theme.json
+msgctxt "Space size name"
+msgid "X-Large"
 msgstr ""
 
-#: inc/setup.php
-msgid "About"
-msgstr ""
-
-#: inc/setup.php
-msgid "Write a few honest lines about who you are and why you write."
-msgstr ""
-
-#: inc/setup.php
-msgid "Writing"
-msgstr ""
-
-#: inc/setup.php
-msgid "Your posts will appear here."
-msgstr ""
-
-#: page-full-width.php
-msgid "Full Width"
-msgstr ""
-
-#: inc/customizer.php
-msgid "Color scheme"
-msgstr ""
-
-#: inc/customizer.php
-msgid "Auto (follow system)"
-msgstr ""
-
-#: inc/customizer.php
-msgid "Light"
-msgstr ""
-
-#: inc/customizer.php
-msgid "Dark"
-msgstr ""
-
-#: header.php
-msgid "Toggle color scheme"
-msgstr ""
-
-#: inc/customizer.php
-msgid "Post list layout"
-msgstr ""
-
-#: inc/customizer.php
-msgid "Single-column list"
-msgstr ""
-
-#: inc/customizer.php
-msgid "Two-column grid"
-msgstr ""
-
-#: patterns/post-grid.php
-msgctxt "Pattern title"
-msgid "Post Grid"
-msgstr ""
-
-#: patterns/post-grid.php
-msgctxt "Pattern description"
-msgid "Two-column grid of recent posts with image, title, date and excerpt."
+#: theme.json
+msgctxt "Space size name"
+msgid "2X-Large"
 msgstr ""

@@ -7,7 +7,7 @@
  * Viewport Width: 1200
  *
  * @package Alo_Blog
- * @since 1.1.0
+ * @since 1.1.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
